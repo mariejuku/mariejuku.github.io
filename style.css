@@ -15,31 +15,98 @@
 
 html {
 	background-color: #333;
-	background: url(sitebackground/img1.jpg) no-repeat center center fixed;
+	background: url("sitebackground/img (1).jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
 body {
-	font-family: "Roboto", helvetica, arial, sans-serif;
 	background: none;
 	margin: 2em;
-	color: #111;
+	color: #FFF;
+
+	font-family: "BRLN", helvetica, arial, sans-serif;
+	font-size:1.75rem;
+
 }
 main {
-	background-color: #1119;
+	background-color: #1117;
+	backdrop-filter: blur(8px);
+	border-radius: 4px;
 }
-h1 {
-	font-family: "BRLN", serif;
+h1, h2, h3 {
+	font-family: "BRDN", sans-serif;
 	font-style: italic;
 	text-transform: uppercase;
-	font-size: 4em;
-	color: #FFF;
+}
+h1, h2 { font-size: 4rem; }
+h2 {padding-top:.25em; padding-bottom:.1em;}
+h3 {font-size: 1.5rem;}
+
+
+a{ color:unset;}
+a:hover {color:unset;text-decoration: unset;}
+
+p { line-height: 1.3; font-size:1.5rem; transform:scale(1);}
+p a {
+	display: inline-block;
+	position: relative;
+}
+p a.italicPad {
+	padding-right:.2em;
+	margin-right:-.2em;
+}
+p a:hover {
+	text-shadow: 
+	2px 2px 0 #111f;
+}
+p a::before {
+	content:"";
+	background:#FFC926;
+	position: absolute;
+	top: 70%;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+	z-index: -1;
+	transition: top .25s, bottom .25s;
+}
+p a:hover::before {
+	top: 15%;
+    bottom: 20%;	
 }
 
+.twitterLink {
+	display:block;
+	transform-origin: 0 0;
+	transform:scaleY(.75);
+	text-shadow: 
+	3px 3px 0 #111,
+	4px 4px 0 #111;
+	padding-right:.25em;
+	text-transform: uppercase;
+	font-style: italic;
+}
+.twitterLink::before {
+	content:"";
+	position: absolute;
+	background:#FFC926;
+	top: 100%;
+    bottom: 9px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+	transition: top .25s;
+	border-radius: 3px;
+}
+.twitterLink:hover::before { top:35%;}
+.twitterLink:hover .suppressed { opacity:1; }
+
+.fa { vertical-align: sub; }
+
 .turbo {
-	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-width: 2.1px;
 	-webkit-text-stroke-color: #111;
 	text-shadow: 
 		1px 1px 0 #111, 
@@ -51,8 +118,138 @@ h1 {
 		7px 7px 0 #111,
 		8px 8px 0 #111;
 }
+.fallbackFont {
+	font-family: arial;
+	font-weight: 800;
+}
+.suppressed {
+	opacity:.7;
+	transition: opacity .25s;
+}
+.mainLogo {
+	background-color: #1118;
+	backdrop-filter: blur(2px);
+	border-radius: 50%;
+	padding:10%;
+	transform: scale(1.25);
+}
 
-key:hover {
-	background: radial-gradient(#fff8, #fff0), #0b8;
-	box-shadow: 0px 0px 10px 0px #0b8f;
+.showcaseBox {
+	display:block;
+	margin:1em;
+	background:#111d;
+	border-radius: 3px;
+	overflow:hidden;
+}
+.panel .showcaseBox {
+	margin:0;
+}
+.showcaseBox>:first-child { border-radius: 3px 3px 0 0; }
+.showcaseBox>:last-child { border-radius: 0 0 3px 3px; }
+.showcaseBox h3 {
+	position: relative;
+	background:#111c;
+	margin-bottom: 0;
+	padding-top:.25em;
+	font-size:.8em;
+	overflow: hidden;
+}
+.showcaseBox h3>span {
+	display: inline-block;
+	margin-left:1em;
+	text-shadow: 
+	2px 2px 0 #111;
+}
+
+a.showcaseBox h3::before {
+	content:"";
+	background:#FFC926;
+	position: absolute;
+	top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	transition: top .25s, bottom .25s;
+	
+}
+a.showcaseBox:hover h3::before {
+	top: 0%;
+	
+}
+a.showcaseBox img {
+	transition: transform .5s;
+}
+a.showcaseBox:hover img {
+	transform:scale(1.15	);
+}
+.showcaseBox p {
+	padding: .25em;
+	margin-bottom:0;
+	font-family: "BRDN", sans-serif;
+	font-style: italic;
+}
+.showcaseBox .imgOverlay {
+	display: block;
+	background:#FFC92633;
+	position: absolute;
+	top: 100%;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+	transition: top .5s;
+}
+a.showcaseBox:hover .imgOverlay {
+	top: 0%;
+}
+
+a.showcaseBox.yellow h3::before {background:#FFC926;}
+.showcaseBox.yellow .imgOverlay {background:#FFC92633;}
+a.showcaseBox.red h3::before {background:#FA0032;}
+.showcaseBox.red .imgOverlay {background:#FA003233;}
+a.showcaseBox.blue h3::before {background:#00EBFF;}
+.showcaseBox.blue .imgOverlay {background:#00EBFF33;}
+a.showcaseBox.green h3::before {background:#00DF70;}
+.showcaseBox.green .imgOverlay {background:#00DF7033;}
+
+.stretchY {
+	transform-origin: 0 0;
+	transform:scaleY(.75);
+	margin-bottom:-25%;
+}
+.stretchX {
+	transform-origin: 0 0;
+	transform:scaleX(1.25);
+	margin-right:25%;
+}
+.no-overflow {
+	overflow: hidden;
+}
+
+.panel {
+	background:#111c;
+	border-radius: 3px;
+	margin:0 1em;
+	padding:0.25em .75em 0;
+	overflow:hidden;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.skinPackChapter {
+	background: linear-gradient(90deg, #FA0032, transparent);
+	
+	padding:.25em;
+}
+.skinPackChapter.red { background: linear-gradient(90deg, #FA003266, transparent); }
+.skinPackChapter.yellow { background: linear-gradient(90deg, #FFC92666, transparent); }
+.skinPackChapter.green { background: linear-gradient(90deg, #00DF7066, transparent); }
+.skinPackChapter.blue { background: linear-gradient(90deg, #00EBFF66, transparent); }
+
+.skinThumbnail {
+	display: inline-block;
+	max-height: 32px;
+	border-radius: 4px;
+	box-shadow: 1px 1px 0px #222;
 }
