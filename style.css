@@ -42,6 +42,7 @@ h1, h2, h3 {
 h1, h2 { font-size: 4rem; }
 h2 {padding-top:.25em; padding-bottom:.1em;}
 h3 {font-size: 1.5rem;}
+h3:before{content:"llll"; text-transform: lowercase; color:#FFC926;}
 
 
 a{ color:unset;}
@@ -101,6 +102,19 @@ p a:hover::before {
 }
 .twitterLink:hover::before { top:35%;}
 .twitterLink:hover .suppressed { opacity:1; }
+.twitterLinkRow { height:0px; }
+@media (max-width: 1200px) { 
+	.twitterLinkRow {
+		position: relative;
+		margin-right:-50px;
+		top:-50px;
+	}
+}
+
+@media (max-width: 576px) { 
+	.responsiveZoom { zoom:.5; }
+}
+
 
 .fa { vertical-align: sub; }
 
