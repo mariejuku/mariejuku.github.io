@@ -77,6 +77,11 @@ p a:hover::before {
     bottom: 20%;	
 }
 
+.text-green { color:#00DF70; }
+.text-blue { color:#00EBFF; }
+.text-yellow { color:#FFC926; }
+.text-red { color:#FA0032; }
+
 .twitterLink {
 	display:block;
 	transform-origin: 0 0;
@@ -116,7 +121,9 @@ p a:hover::before {
 }
 
 
-.fa { vertical-align: sub; }
+.fa-sub { vertical-align: sub; }
+.fa-shadow { text-shadow: 1px 1px 5px #111a; }
+.fa-shadow.fa-spin { text-shadow: 0px 0px 5px #111a; }
 
 .turbo {
 	-webkit-text-stroke-width: 2.1px;
