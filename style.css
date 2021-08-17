@@ -320,9 +320,9 @@ a.showcaseBox.green h3::before {background:#00DF70;}
 }
 .buttonContainer {
 	background-color: #666c;
-	display:inline-block;
-	padding:5px;
-	height:60px;
 	border-radius:30px;
 	margin-bottom:8px;
+}
+.buttonContainer>.col-auto {
+	padding:5px;
 }

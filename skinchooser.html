@@ -24,25 +24,25 @@
 <body>
 	<header class="container-fluid">
 		<div class="row mb-5 align-items-center">
-			
+
 			<div class="col-auto" style="overflow: visible;">
 				<a href="index.html">
-				<img class="img-fluid mainLogo off" style="max-height:160px;" src="logo/lagoon.png">
-			</a>
+					<img class="img-fluid mainLogo off" style="max-height:160px;" src="logo/lagoon.png">
+				</a>
 			</div>
 			<div class="col">
 				<a href="index.html">
-				<h1 class="turbo mainTitle randomColour stretchX">Marie's<br />Trackmania Stuff</h1>
-			</a>
+					<h1 class="turbo mainTitle randomColour stretchX">Marie's<br />Trackmania Stuff</h1>
+				</a>
 			</div>
 			<div class="col-auto align-self-start">
-				<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad"><span class="suppressed"><i
-								class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span
-							class="fallbackFont"><wbr />@</span>mariejuku</a>
+				<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad"><span
+						class="suppressed"><i class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span
+						class="fallbackFont"><wbr />@</span>mariejuku</a>
 			</div>
 		</div>
 	</header>
-	<main class="container-fluid">
+	<main class="container">
 		<div class="row">
 			<div class="col">
 				<h2 class="stretchX turbo">Trackmania Skin Chooser</h2>
@@ -52,46 +52,84 @@
 			<div class="col">
 				<div class="panel">
 					<p>Use this tool to locate skins by attribute and apply them to the game via URL.</p>
-				
+					<h3 class="stretchX">Choose skin pack</h3>
+					<div class="row buttonContainer no-gutters justify-content-between">
+						<div class="col-auto">
+							<button type="button" class="btn packSelectButton selected" packid="modern">
+								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+								<div class="label">Marie's Modern Skin Pack</div>
+							</button>
+						</div>
+						<div class="col-auto">
+							<button type="button" class="btn packSelectButton" packid="pride">
+								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+								<div class="label">Pride Flag Pack</div>
+							</button>
+						</div>
+						<div class="col-auto">
+							<button type="button" class="btn packSelectButton" packid="vtt">
+								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+								<div class="label">World Time Trial</div>
+							</button>
+						</div>
+						<div class="col-auto">
+							<button type="button" class="btn packSelectButton" packid="turbo">
+								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+								<div class="label">Trackmania Turbo</div>
+							</button>
+						</div>
+						<div class="col-auto">
+							<button type="button" class="btn packSelectButton" packid="mx">
+								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+								<div class="label">ManiaExchange Pack</div>
+							</button>
+						</div>
+					</div>
+					<!--div class="packloader container-fluid text-center"><img src="img/loader.gif"></div-->
+					<div class="pack" packid="vtt">
+						<h3 class="stretchX packTitle">World Time Trial</h3>
+						<div class="row">
+							<skin src="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down" color="black">
+								<div class="col">
+									<img src="https://mariejuku.github.io/trackmania/modernSkinPack/dist/VTTpack/Advertisement/jump2_dark.png">
+								</div>
+							</skin>
+						</div>
+						
+					</div>
 					<skinChooserData>
 						<pack packid="modern" name="Marie's Modern Skin Pack" img="img/lagoonPack.jpg">
 							<environment type="lagoon" name="Lagoon">
-								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down" color="black"></skin>
+								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
+									color="black"></skin>
 							</environment>
 						</pack>
 						<pack packid="turbo" name="Trackmania Turbo" img="img/lagoonPack.jpg">
 							<environment type="lagoon" name="Lagoon">
-								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down" color="black"></skin>
+								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
+									color="black"></skin>
+							</environment>
+						</pack>
+						<pack packid="vtt" name="World Time Trial" img="img/lagoonPack.jpg">
+							<environment type="lagoon" name="Lagoon">
+								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
+									color="black"></skin>
 							</environment>
 						</pack>
 					</skinChooserData>
-					<skinChooser>
-						<div class="loader container-fluid text-center"><img src="img/loader.gif"></div>
-						<div class="main hidden">
-							<h3 class="stretchX">Choose skin pack</h3>
-							<packs class="buttonContainer"></packs>
-							<div class="packloader container-fluid text-center"><img src="img/loader.gif"></div>
-							<div class="pack hidden">
-								<h3 class="stretchX packTitle">Skin Pack</h3>
-								<environments class="buttonContainer"></environments>
-							</div>
-						</div>
-					</skinChooser>
 				</div>
 			</div>
 		</div>
 	</main>
 
 	<footer>
-		<script
-			src="https://code.jquery.com/jquery-3.6.0.min.js"
-			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
 			crossorigin="anonymous"></script>
-			<script src="script.js" defer></script>
-			<script src="skinChooser.js" defer></script>
+		<script src="script.js" defer></script>
+		<script src="skinChooser.js" defer></script>
 	</footer>
 </body>
 
