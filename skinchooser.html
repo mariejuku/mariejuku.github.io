@@ -8,10 +8,8 @@
 
 	<title>Marie's Trackmania Stuff</title>
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,9 +34,7 @@
 				</a>
 			</div>
 			<div class="col-auto align-self-start">
-				<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad"><span
-						class="suppressed"><i class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span
-						class="fallbackFont"><wbr />@</span>mariejuku</a>
+				<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad"><span class="suppressed"><i class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span class="fallbackFont"><wbr />@</span>mariejuku</a>
 			</div>
 		</div>
 	</header>
@@ -86,36 +82,72 @@
 						</div>
 					</div>
 					<!--div class="packloader container-fluid text-center"><img src="img/loader.gif"></div-->
-					<div class="pack" packid="vtt">
-						<h3 class="stretchX packTitle">World Time Trial</h3>
-						<div class="row">
-							<skin src="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down" color="black">
-								<div class="col">
-									<img src="https://mariejuku.github.io/trackmania/modernSkinPack/dist/VTTpack/Advertisement/jump2_dark.png">
+					<h3 class="stretchX packTitle">World Time Trial</h3>
+					<packDisplay></packDisplay>
+					<buttons class=""></buttons>
+					<packData class="hidden" packid="vtt">
+						<categories>
+							<category>ad</category>
+							<category>direction</category>
+							<category>race</category>
+							<category>road</category>
+						</categories>
+						<skinPath src="trackmania/modernSkinPack/dist/VTTpack/Advertisement/">
+							<skinItem type="image" file="vtt_adAuthorMedal.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adMX.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adNadeo.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adOpenplanet.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adOpenplanet_white.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adTrackmania.png" category="ad" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_adUnbitn.webm" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adVTT1.png" category="ad" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_adVTT2.png" category="ad" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowLeftGreen.webm" category="direction" direction="left" color="green" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowLeftRed.webm" category="direction" direction="left" color="red" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowLeftYellow.webm" category="direction" direction="left" color="yellow" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowRightGreen.webm" category="direction" direction="right" color="green" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowRightRed.webm" category="direction" direction="right" color="red" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_arrowRightYellow.webm" category="direction" direction="right" color="yellow" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronLeftGreen.webm" category="direction" direction="left" color="green" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronLeftRed.webm" category="direction" direction="left" color="red" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronLeftYellow.webm" category="direction" direction="left" color="yellow" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronRightGreen.webm" category="direction" direction="right" color="green" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronRightRed.webm" category="direction" direction="right" color="red" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_chevronRightYellow.webm" category="direction" direction="right" color="yellow" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_start_rally.png" category="race" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_checkpoint_rally.png" category="race" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_finish_rally.png" category="race" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_start_hillclimb.png" category="race" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_checkpoint_hillclimb.png" category="race" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_finish_hillclimb.png" category="race" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_magnetDown.webm" category="road" block="sign"></skinItem>
+							<skinItem type="video" file="vtt_magnetUp.webm" category="road" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_slow.png" category="road" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_warning_1km.png" category="road" block="sign"></skinItem>
+							<skinItem type="image" file="jump2_dark.png" category="road" block="sign"></skinItem>
+							<skinItem type="image" file="jump2_light.png" category="road" block="sign"></skinItem>
+							<skinItem type="image" file="vtt_valley_blue.png" category="ad" block="sign" color="blue"></skinItem>
+							<skinItem type="image" file="vtt_valley_green.png" category="ad" block="sign" color="green"></skinItem>
+							<skinItem type="image" file="vtt_valley_red.png" category="ad" block="sign" color="red"></skinItem>
+							<skinItem type="image" file="vtt_valley_white.png" category="ad" block="sign" color="white"></skinItem>
+						</skinPath>
+					</packData>
+					<skinChooserData class="hidden">
+						<div class="skinButtonContainer col-xl-2 col-lg-3 col-md-5 col-sm-6 col-12">
+							<div class="row">
+								<div class="col px-3">
+									<button class="btn skinButton" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png">
+										<div class="image row hidden">
+											<div class="col"><img class="img-fluid" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png"/></div>
+										</div>
+										<div class="video row hidden">
+											<div class="col"><video class="img-fluid" loop muted autoplay src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_arrowLeftRed.webm"></div>
+										</div>
+										<div class="row"><div class="col"><p class="skinName">vtt_adAuthorMedal</p><p class="copyText hidden">Copied!</p></div></div>
+									</button>
 								</div>
-							</skin>
+							</div>
 						</div>
-						
-					</div>
-					<skinChooserData>
-						<pack packid="modern" name="Marie's Modern Skin Pack" img="img/lagoonPack.jpg">
-							<environment type="lagoon" name="Lagoon">
-								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
-									color="black"></skin>
-							</environment>
-						</pack>
-						<pack packid="turbo" name="Trackmania Turbo" img="img/lagoonPack.jpg">
-							<environment type="lagoon" name="Lagoon">
-								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
-									color="black"></skin>
-							</environment>
-						</pack>
-						<pack packid="vtt" name="World Time Trial" img="img/lagoonPack.jpg">
-							<environment type="lagoon" name="Lagoon">
-								<skin file="lag_arrow_down.png" category="direction" family="lag_arrow" direction="down"
-									color="black"></skin>
-							</environment>
-						</pack>
 					</skinChooserData>
 				</div>
 			</div>
@@ -123,11 +155,8 @@
 	</main>
 
 	<footer>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 		<script src="script.js" defer></script>
 		<script src="skinChooser.js" defer></script>
 	</footer>

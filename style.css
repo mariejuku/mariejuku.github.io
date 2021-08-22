@@ -326,3 +326,28 @@ a.showcaseBox.green h3::before {background:#00DF70;}
 .buttonContainer>.col-auto {
 	padding:5px;
 }
+
+.skinButton {
+	background-color: #666c;
+	border-radius:6px;
+	margin-bottom:8px;
+	overflow:hidden;
+	height:unset;
+	padding:unset;
+	margin-left:0 !important;
+}
+.skinButton video {
+	margin-bottom: -14px;
+}
+
+.skinButton p {
+	margin-top:2px;
+	margin-bottom:-2px;
+	font-size:.5em;
+	text-align: center;
+}
+.btn.skinButton:active {
+	border-color:#FA0032;
+	box-shadow: 0 0 0 0.1rem #FA0032;
+	transition: border-color 0s, box-shadow 0s;
+}
