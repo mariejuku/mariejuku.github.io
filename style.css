@@ -168,7 +168,6 @@ p a:hover::before {
 .showcaseBox>:last-child { border-radius: 0 0 3px 3px; }
 .showcaseBox h3 {
 	position: relative;
-	background:#111c;
 	margin-bottom: 0;
 	padding-top:.25em;
 	font-size:.8em;
@@ -176,12 +175,15 @@ p a:hover::before {
 }
 .showcaseBox h3>span {
 	display: inline-block;
-	margin-left:1em;
-	text-shadow: 
-	2px 2px 0 #111;
+}
+.showcaseBox .header {
+	text-shadow: 2px 2px 0 #111;
 }
 
-a.showcaseBox h3::before {
+a.showcaseBox h3:before {
+	content:"";
+}
+a.showcaseBox .header::before {
 	content:"";
 	background:#FFC926;
 	position: absolute;
@@ -192,15 +194,14 @@ a.showcaseBox h3::before {
 	transition: top .25s, bottom .25s;
 	
 }
-a.showcaseBox:hover h3::before {
-	top: 0%;
-	
+a.showcaseBox:hover .header::before {
+	top: 0%;	
 }
-a.showcaseBox img {
+a.showcaseBox .image img {
 	transition: transform .5s;
 }
-a.showcaseBox:hover img {
-	transform:scale(1.15	);
+a.showcaseBox:hover .image img {
+	transform:scale(1.15);
 }
 .showcaseBox p {
 	padding: .25em;
@@ -218,17 +219,43 @@ a.showcaseBox:hover img {
     right: 0px;
 	transition: top .5s;
 }
-a.showcaseBox:hover .imgOverlay {
-	top: 0%;
+a.showcaseBox:hover .imgOverlay { top: 0%; }
+.showcaseBox .iconOverlay {
+	display: block;
+	position: absolute;
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	transition: transform .5s, opacity .5s, text-shadow .5s;
+	opacity:0%;
+	text-shadow: 0px 0px 0px #111;
+	transform:scale(1.15);
+	overflow:hidden;
+}
+.showcaseBox:hover .iconOverlay {
+	transform:scale(1);
+	opacity: 100%;
+	text-shadow: 0px 0px 4px #111;
+}
+.info-row>div {
+	background-color:rgba(255, 255, 255, 0);
+	transition: background-color .5s;
+}
+.info-row>div:hover {
+	background-color:rgb(255, 255, 255, .05);
+}
+.info-row>div:not(:last-child) {
+	border-right: 1px solid white;
 }
 
-a.showcaseBox.yellow h3::before {background:#FFC926;}
+a.showcaseBox.yellow .header::before {background:#FFC926;}
 .showcaseBox.yellow .imgOverlay {background:#FFC92633;}
-a.showcaseBox.red h3::before {background:#FA0032;}
+a.showcaseBox.red .header::before {background:#FA0032;}
 .showcaseBox.red .imgOverlay {background:#FA003233;}
-a.showcaseBox.blue h3::before {background:#00EBFF;}
+a.showcaseBox.blue .header::before {background:#00EBFF;}
 .showcaseBox.blue .imgOverlay {background:#00EBFF33;}
-a.showcaseBox.green h3::before {background:#00DF70;}
+a.showcaseBox.green .header::before {background:#00DF70;}
 .showcaseBox.green .imgOverlay {background:#00DF7033;}
 
 .stretchY {
@@ -243,6 +270,14 @@ a.showcaseBox.green h3::before {background:#00DF70;}
 }
 .no-overflow {
 	overflow: hidden;
+}
+.row.no-margin {
+	margin-left: 0;
+	margin-right:0;
+}
+.col.no-padding {
+	padding-left: 0;
+	padding-right:0;
 }
 
 .panel {
