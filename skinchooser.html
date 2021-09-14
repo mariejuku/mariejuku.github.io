@@ -21,20 +21,21 @@
 
 <body>
 	<header class="container-fluid">
-		<div class="row mb-5 align-items-center">
-
-			<div class="col-auto" style="overflow: visible;">
+		<div class="twitterLinkBox">
+			<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad responsiveZoom"><span class="suppressed"><i
+						class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span
+					class="fallbackFont"><wbr />@</span>mariejuku</a>
+		</div>
+		<div class="row mb-0 mt-4 mb-md-4 mt-sm-5 mt-md-0 align-items-center">
+			<div class="col-auto mb-4 d-none d-md-block" style="overflow: visible;">
 				<a href="index.html">
 					<img class="img-fluid mainLogo off" style="max-height:160px;" src="logo/lagoon.png">
 				</a>
 			</div>
-			<div class="col">
+			<div class="col" >
 				<a href="index.html">
-					<h1 class="turbo mainTitle randomColour stretchX">Marie's<br />Trackmania Stuff</h1>
-				</a>
-			</div>
-			<div class="col-auto align-self-start">
-				<a href="https://www.twitter.com/mariejuku" target="_blank" class="twitterLink italicPad"><span class="suppressed"><i class="fa fa-sub fa-twitter fa-2x"></i>twitter.com/ </span><span class="fallbackFont"><wbr />@</span>mariejuku</a>
+				<h1 class="turbo mainTitle randomColour stretchX responsiveZoom">Marie's<br />Trackmania Stuff</h1>
+			</a>
 			</div>
 		</div>
 	</header>
@@ -47,111 +48,243 @@
 		<div class="row">
 			<div class="col">
 				<div class="panel">
+					<h3 class="stretchX">Tool Description</h3>
 					<p>Use this tool to locate skins by attribute and apply them to the game via URL.</p>
 					<h3 class="stretchX">Choose skin pack</h3>
-					<div class="row buttonContainer no-gutters justify-content-between">
-						<div class="col-auto">
-							<button type="button" class="btn packSelectButton selected" packid="modern">
-								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-								<div class="label">Marie's Modern Skin Pack</div>
-							</button>
-						</div>
-						<div class="col-auto">
-							<button type="button" class="btn packSelectButton" packid="pride">
-								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-								<div class="label">Pride Flag Pack</div>
-							</button>
-						</div>
-						<div class="col-auto">
-							<button type="button" class="btn packSelectButton" packid="vtt">
-								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-								<div class="label">World Time Trial</div>
-							</button>
-						</div>
-						<div class="col-auto">
-							<button type="button" class="btn packSelectButton" packid="turbo">
-								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-								<div class="label">Trackmania Turbo</div>
-							</button>
-						</div>
-						<div class="col-auto">
-							<button type="button" class="btn packSelectButton" packid="mx">
-								<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-								<div class="label">ManiaExchange Pack</div>
-							</button>
-						</div>
+					<div class="row packButtons">
+						<div class="hidden loader col container-fluid text-center"><img src="img/loader.gif"></div>
+						<div class="content col">
+							<div class="row buttonContainer no-gutters justify-content-between">
+							
+							</div>
+						</div>	
 					</div>
-					<!--div class="packloader container-fluid text-center"><img src="img/loader.gif"></div-->
 					<h3 class="stretchX packTitle">World Time Trial</h3>
+					<div class="row skinButtons">
+						<div class="hidden loader col container-fluid text-center"><img src="img/loader.gif"></div>
+						<div class="content col"></div>	
+					</div>
+					
+					
 					<packDisplay></packDisplay>
 					<buttons class=""></buttons>
-					<packData class="hidden" packid="vtt">
-						<categories>
-							<category>ad</category>
-							<category>direction</category>
-							<category>race</category>
-							<category>road</category>
-						</categories>
-						<skinPath src="trackmania/modernSkinPack/dist/VTTpack/Advertisement/">
-							<skinItem type="image" file="vtt_adAuthorMedal.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adMX.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adNadeo.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adOpenplanet.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adOpenplanet_white.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adTrackmania.png" category="ad" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_adUnbitn.webm" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adVTT1.png" category="ad" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_adVTT2.png" category="ad" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowLeftGreen.webm" category="direction" direction="left" color="green" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowLeftRed.webm" category="direction" direction="left" color="red" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowLeftYellow.webm" category="direction" direction="left" color="yellow" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowRightGreen.webm" category="direction" direction="right" color="green" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowRightRed.webm" category="direction" direction="right" color="red" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_arrowRightYellow.webm" category="direction" direction="right" color="yellow" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronLeftGreen.webm" category="direction" direction="left" color="green" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronLeftRed.webm" category="direction" direction="left" color="red" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronLeftYellow.webm" category="direction" direction="left" color="yellow" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronRightGreen.webm" category="direction" direction="right" color="green" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronRightRed.webm" category="direction" direction="right" color="red" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_chevronRightYellow.webm" category="direction" direction="right" color="yellow" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_start_rally.png" category="race" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_checkpoint_rally.png" category="race" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_finish_rally.png" category="race" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_start_hillclimb.png" category="race" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_checkpoint_hillclimb.png" category="race" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_finish_hillclimb.png" category="race" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_magnetDown.webm" category="road" block="sign"></skinItem>
-							<skinItem type="video" file="vtt_magnetUp.webm" category="road" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_slow.png" category="road" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_warning_1km.png" category="road" block="sign"></skinItem>
-							<skinItem type="image" file="jump2_dark.png" category="road" block="sign"></skinItem>
-							<skinItem type="image" file="jump2_light.png" category="road" block="sign"></skinItem>
-							<skinItem type="image" file="vtt_valley_blue.png" category="ad" block="sign" color="blue"></skinItem>
-							<skinItem type="image" file="vtt_valley_green.png" category="ad" block="sign" color="green"></skinItem>
-							<skinItem type="image" file="vtt_valley_red.png" category="ad" block="sign" color="red"></skinItem>
-							<skinItem type="image" file="vtt_valley_white.png" category="ad" block="sign" color="white"></skinItem>
-						</skinPath>
-					</packData>
-					<skinChooserData class="hidden">
-						<div class="skinButtonContainer col-xl-2 col-lg-3 col-md-5 col-sm-6 col-12">
-							<div class="row">
-								<div class="col px-3">
-									<button class="btn skinButton" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png">
-										<div class="image row hidden">
-											<div class="col"><img class="img-fluid" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png"/></div>
-										</div>
-										<div class="video row hidden">
-											<div class="col"><video class="img-fluid" loop muted autoplay src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_arrowLeftRed.webm"></div>
-										</div>
-										<div class="row"><div class="col"><p class="skinName">vtt_adAuthorMedal</p><p class="copyText hidden">Copied!</p></div></div>
-									</button>
-								</div>
+					<packs class="hidden">
+						<pack packid="lightPanels" name="Light Panel Pack" image="trackmania/lightPanels2/dist/light_red_royal.png" defaultAttribute="block"
+						platform>
+							<skinPath fileSrc="trackmania/lightPanels2/dist/" fileExt=".png" fileExtVideo=".webm"
+							category="ad" block="sign (trackmania 2)" platform="maniaplanet">
+								<skin type="image" file="light_blue_light"></skin>
+								<skin type="image" file="light_blue"></skin>
+								<skin type="image" file="light_blue_dark"></skin>
+								<skin type="image" file="light_purple"></skin>
+								<skin type="image" file="light_purple_light"></skin>
+								<skin type="image" file="light_pink"></skin>
+								<skin type="image" file="light_red_royal"></skin>
+								<skin type="image" file="light_red"></skin>
+								<skin type="image" file="light_orange"></skin>
+								<skin type="image" file="light_yellow"></skin>
+								<skin type="image" file="light_green"></skin>
+								<skin type="image" file="light_green_light"></skin>
+								<skin type="image" file="light_white"></skin>
+								<skin type="image" file="light_off"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/lightPanels2020/dist/Advertisement1x1/LightPanels/" fileExt=".tga" fileExtVideo=".webm"
+							thumbSrc="trackmania/lightPanels2020/dist/Advertisement1x1/LightPanels/thumbs/" thumbExt=".png"
+							category="ad" block="Advertisement 1x1" platform="2020">
+								<skin type="image" file="light_blue_light"></skin>
+								<skin type="image" file="light_blue"></skin>
+								<skin type="image" file="light_blue_dark"></skin>
+								<skin type="image" file="light_purple"></skin>
+								<skin type="image" file="light_purple_light"></skin>
+								<skin type="image" file="light_pink"></skin>
+								<skin type="image" file="light_red_royal"></skin>
+								<skin type="image" file="light_red"></skin>
+								<skin type="image" file="light_orange"></skin>
+								<skin type="image" file="light_yellow"></skin>
+								<skin type="image" file="light_green"></skin>
+								<skin type="image" file="light_green_light"></skin>
+								<skin type="image" file="light_white"></skin>
+								<skin type="image" file="light_off"></skin>
+							</skinPath>		
+							<skinPath fileSrc="trackmania/lightPanels2020/dist/Advertisement2x1/LightPanels/" fileExt=".tga" fileExtVideo=".webm"
+							thumbSrc="trackmania/lightPanels2020/dist/Advertisement2x1/LightPanels/thumbs/" thumbExt=".png"
+							category="ad" block="Advertisement 2x1" platform="2020">
+								<skin type="image" file="light_blue_light"></skin>
+								<skin type="image" file="light_blue"></skin>
+								<skin type="image" file="light_blue_dark"></skin>
+								<skin type="image" file="light_purple"></skin>
+								<skin type="image" file="light_purple_light"></skin>
+								<skin type="image" file="light_pink"></skin>
+								<skin type="image" file="light_red_royal"></skin>
+								<skin type="image" file="light_red"></skin>
+								<skin type="image" file="light_orange"></skin>
+								<skin type="image" file="light_yellow"></skin>
+								<skin type="image" file="light_green"></skin>
+								<skin type="image" file="light_green_light"></skin>
+								<skin type="image" file="light_white"></skin>
+								<skin type="image" file="light_off"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/lightPanels2020/dist/Advertisement4x1/LightPanels/" fileExt=".tga" fileExtVideo=".webm"
+							thumbSrc="trackmania/lightPanels2020/dist/Advertisement4x1/LightPanels/thumbs/" thumbExt=".png"
+							category="ad" block="Advertisement 4x1" platform="2020">
+								<skin type="image" file="light_blue_light"></skin>
+								<skin type="image" file="light_blue"></skin>
+								<skin type="image" file="light_blue_dark"></skin>
+								<skin type="image" file="light_purple"></skin>
+								<skin type="image" file="light_purple_light"></skin>
+								<skin type="image" file="light_pink"></skin>
+								<skin type="image" file="light_red_royal"></skin>
+								<skin type="image" file="light_red"></skin>
+								<skin type="image" file="light_orange"></skin>
+								<skin type="image" file="light_yellow"></skin>
+								<skin type="image" file="light_green"></skin>
+								<skin type="image" file="light_green_light"></skin>
+								<skin type="image" file="light_white"></skin>
+								<skin type="image" file="light_off"></skin>
+							</skinPath>					
+						</pack>
+						<pack packid="pride" name="Pride Flag Pack" image="trackmania/modernSkinPack/dist/pride2020/Advertisement1x1/thumbs/pr_pride.png" defaultAttribute="block">
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/pride2020/Advertisement1x1/" fileExt=".tga" fileExtVideo=".webm"
+							thumbSrc="trackmania/modernSkinPack/dist/pride2020/Advertisement1x1/thumbs/" thumbExt=".png" thumbExtVideo=".webm"
+							category="ad" block="Advertisement1x1">
+								<skin type="image" file="pr_ace"></skin>
+								<skin type="image" file="pr_agender"></skin>
+								<skin type="image" file="pr_aro"></skin>
+								<skin type="image" file="pr_bi"></skin>
+								<skin type="image" file="pr_demiro"></skin>
+								<skin type="image" file="pr_demisex"></skin>
+								<skin type="image" file="pr_gay"></skin>
+								<skin type="image" file="pr_genderfluid"></skin>
+								<skin type="image" file="pr_intersex"></skin>
+								<skin type="image" file="pr_lesbian"></skin>
+								<skin type="image" file="pr_nb"></skin>
+								<skin type="image" file="pr_pan"></skin>
+								<skin type="image" file="pr_pride"></skin>
+								<skin type="image" file="pr_rainbow"></skin>
+								<skin type="image" file="pr_trans"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/pride2020/Advertisement2x1/" fileExt=".tga" fileExtVideo=".webm"
+							thumbSrc="trackmania/modernSkinPack/dist/pride2020/Advertisement2x1/thumbs/" thumbExt=".png" thumbExtVideo=".webm"
+							category="ad" block="Advertisement2x1">
+								<skin type="image" file="pr_ace"></skin>
+								<skin type="image" file="pr_agender"></skin>
+								<skin type="image" file="pr_aro"></skin>
+								<skin type="image" file="pr_bi"></skin>
+								<skin type="image" file="pr_demiro"></skin>
+								<skin type="image" file="pr_demisex"></skin>
+								<skin type="image" file="pr_gay"></skin>
+								<skin type="image" file="pr_genderfluid"></skin>
+								<skin type="image" file="pr_intersex"></skin>
+								<skin type="image" file="pr_lesbian"></skin>
+								<skin type="image" file="pr_nb"></skin>
+								<skin type="image" file="pr_pan"></skin>
+								<skin type="image" file="pr_pride"></skin>
+								<skin type="image" file="pr_rainbow"></skin>
+								<skin type="image" file="pr_trans"></skin>
+							</skinPath>
+						</pack>
+						<pack packid="vtt" name="World Time Trial" image="img/lagoonPack.jpg" defaultAttribute="category">
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/VTTpack/Advertisement/" fileExt=".png" fileExtVideo=".webm"
+							block="sign">
+								<skin type="image" file="vtt_adAuthorMedal" category="ad"></skin>
+								<skin type="image" file="vtt_adMX" category="ad"></skin>
+								<skin type="image" file="vtt_adNadeo" category="ad"></skin>
+								<skin type="image" file="vtt_adOpenplanet" category="ad"></skin>
+								<skin type="image" file="vtt_adOpenplanet_white" category="ad"></skin>
+								<skin type="image" file="vtt_adTrackmania" category="ad"></skin>
+								<skin type="video" file="vtt_adUnbitn" category="ad"></skin>
+								<skin type="image" file="vtt_adVTT1" category="ad"></skin>
+								<skin type="image" file="vtt_adVTT2" category="ad"></skin>
+								<skin type="video" file="vtt_arrowLeftGreen" category="direction" direction="left" color="green"></skin>
+								<skin type="video" file="vtt_arrowLeftRed" category="direction" direction="left" color="red"></skin>
+								<skin type="video" file="vtt_arrowLeftYellow" category="direction" direction="left" color="yellow"></skin>
+								<skin type="video" file="vtt_arrowRightGreen" category="direction" direction="right" color="green"></skin>
+								<skin type="video" file="vtt_arrowRightRed" category="direction" direction="right" color="red"></skin>
+								<skin type="video" file="vtt_arrowRightYellow" category="direction" direction="right" color="yellow"></skin>
+								<skin type="video" file="vtt_chevronLeftGreen" category="direction" direction="left" color="green"></skin>
+								<skin type="video" file="vtt_chevronLeftRed" category="direction" direction="left" color="red"></skin>
+								<skin type="video" file="vtt_chevronLeftYellow" category="direction" direction="left" color="yellow"></skin>
+								<skin type="video" file="vtt_chevronRightGreen" category="direction" direction="right" color="green"></skin>
+								<skin type="video" file="vtt_chevronRightRed" category="direction" direction="right" color="red"></skin>
+								<skin type="video" file="vtt_chevronRightYellow" category="direction" direction="right" color="yellow"></skin>
+								<skin type="image" file="vtt_start_rally" category="race"></skin>
+								<skin type="image" file="vtt_checkpoint_rally" category="race"></skin>
+								<skin type="image" file="vtt_finish_rally" category="race"></skin>
+								<skin type="image" file="vtt_start_hillclimb" category="race"></skin>
+								<skin type="image" file="vtt_checkpoint_hillclimb" category="race"></skin>
+								<skin type="image" file="vtt_finish_hillclimb" category="race"></skin>
+								<skin type="video" file="vtt_magnetDown" category="road"></skin>
+								<skin type="video" file="vtt_magnetUp" category="road"></skin>
+								<skin type="image" file="vtt_slow" category="road"></skin>
+								<skin type="image" file="vtt_warning_1km" category="road"></skin>
+								<skin type="image" file="jump2_dark" category="road"></skin>
+								<skin type="image" file="jump2_light" category="road"></skin>
+								<skin type="image" file="vtt_valley_blue" category="ad" color="blue"></skin>
+								<skin type="image" file="vtt_valley_green" category="ad" color="green"></skin>
+								<skin type="image" file="vtt_valley_red" category="ad" color="red"></skin>
+								<skin type="image" file="vtt_valley_white" category="ad" color="white"></skin>
+							</skinPath>
+						</pack>
+					</packs>
+					<elements class="hidden">
+						<packButton>
+							<div class="col-auto">
+								<button type="button" class="btn packSelectButton" packid="">
+									<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
+									<div class="label">ManiaExchange Pack</div>
+								</button>
 							</div>
-						</div>
-					</skinChooserData>
+						</packButton>
+						<skinButton>
+							<div class="col-2">
+								<button class="btn skinButton mx-1" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png">
+									<div class="image row hidden">
+										<div class="col"><img class="img-fluid" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png"/></div>
+									</div>
+									<div class="video row hidden">
+										<div class="col"><video class="img-fluid" loop muted autoplay src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_arrowLeftRed.webm"></div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="skinButtonTitle">
+												<p class="skinName">vtt_adAuthorMedal</p>
+												<p class="copyText hidden">Copied!</p>
+											</div>
+										</div>
+									</div>
+								</button>
+							</div>
+						</skinButton>
+						<skinButtonRow>
+							<div>
+								<h3 class="stretchX rowTitle">Skin Row</h3>
+								<div class="row rowContent no-gutters"></div>
+							</div>
+						</skinButtonRow>
+					</elements>
 				</div>
 			</div>
 		</div>
+		<hr class="mt-0"/>
+		<footer class="row">
+			<div class="col text-center">
+				<p>Marie Taylor<span class="suppressed"> / </span>
+					<a href="https://discordapp.com/users/137388492123668481" target="_blank">
+						<span class="fallbackFont">@</span>marie<span class="fallbackFont">#</span>1312
+					</a>
+					<span class="suppressed"> / </span>
+					<a href="https://twitter.com/mariejuku" target="_blank">
+						<span class="fallbackFont">@</span>mariejuku
+					</a>
+				</p>
+				<p>
+					Suggestions and feedback: 
+					<a href="https://discordapp.com/users/137388492123668481" target="_blank">
+					Contact me on Discord
+					</a>
+				</p>
+			</div>
+		</footer>
 	</main>
 
 	<footer>

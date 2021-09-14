@@ -376,7 +376,6 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	overflow:hidden;
 	height:unset;
 	padding:unset;
-	margin-left:0 !important;
 }
 .skinButton video {
 	margin-bottom: -14px;
@@ -385,7 +384,7 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 .skinButton p {
 	margin-top:2px;
 	margin-bottom:-2px;
-	font-size:.5em;
+	font-size:.3em;
 	text-align: center;
 }
 .btn.skinButton:active {
