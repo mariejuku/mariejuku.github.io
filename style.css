@@ -23,7 +23,7 @@ html {
 }
 body {
 	background: none;
-	margin: 2em;
+	margin: 1.5em;
 	color: #FFF;
 	font-family: "BRLN", helvetica, arial, sans-serif;
 	font-size:1.75rem;
@@ -81,6 +81,13 @@ p a:hover::before {
 .text-blue { color:#00EBFF; }
 .text-yellow { color:#FFC926; }
 .text-red { color:#FA0032; }
+
+.twitterLinkBox {
+	display:inline-block;
+	position: absolute;
+	top: 30px;
+    right: 100px;
+}
 
 .twitterLink {
 	display:block;
@@ -156,7 +163,7 @@ p a:hover::before {
 
 .showcaseBox {
 	display:block;
-	margin:1em;
+	margin-bottom:1em;
 	background:#111d;
 	border-radius: 3px;
 	overflow:hidden;
@@ -386,3 +393,22 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	box-shadow: 0 0 0 0.1rem #FA0032;
 	transition: border-color 0s, box-shadow 0s;
 }
+
+@media (max-width: 575.98px) { 
+	
+ }
+
+@media (max-width: 767.98px) { 
+	body {
+		margin:0em;
+	}
+ }
+
+@media (max-width: 991.98px) { 
+	.twitterLinkBox {
+		top:2px;
+		right:10px;
+	}
+}
+
+@media (max-width: 1199.98px) { }
