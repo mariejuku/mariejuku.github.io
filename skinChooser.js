@@ -158,7 +158,7 @@ $( document ).ready(function() {
 
 				if (skin.type === "video") {
 					element2.find(".skinButton .video").removeClass('hidden');
-					element2.find(".skinButton video").attr("src",skin.thumbSrc);
+					element2.find(".skinButton video").attr("src",skin.src);
 				} else {
 					element2.find(".skinButton .image").removeClass('hidden');
 					element2.find(".skinButton img").attr("src",skin.thumbSrc);
@@ -202,7 +202,7 @@ $( document ).ready(function() {
 		selectPack($(this).attr("packid"));
 	});
 	
-	currentPack = selectPack("pride");
+	currentPack = selectPack("turbo");
 
 	function copyTextToClipboard(text) {
 		var textArea = document.createElement("textarea");
