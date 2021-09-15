@@ -325,6 +325,12 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	border-color:#eee;
 	background-color: #111c;
 }
+
+.btn-sm {
+	height: 35px;
+    font-size: 1.25rem;
+	border-radius: 8px;
+}
 .btn:not(:first-child) {
 	margin-left:8px;
 }

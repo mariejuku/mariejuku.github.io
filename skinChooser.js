@@ -4,7 +4,13 @@ $( document ).ready(function() {
 	skinButtonElement = $('elements>skinButton>div');
 	skinButtonRowElement = $('elements>skinButtonRow>div');
 	console.log(skinButtonRowElement);
-	zoom = 0;
+	zoom = '6';
+	zooms = {
+		'2':'col-6',
+		'3':'col-4',
+		'4':'col-3',
+		'6':'col-2',
+	}
 
 	skins = [];
 	skinGroups = {};
@@ -90,6 +96,10 @@ $( document ).ready(function() {
 	});
 
     selectPack = function(packid) {
+		//change button classes
+		$("button.packSelectButton").removeClass('selected');
+		$(`button.packSelectButton[packid="${packid}"]`).addClass('selected');
+
 		console.log(packid);
 		pack = packs[packid];
 		currentPack = pack;
@@ -148,11 +158,14 @@ $( document ).ready(function() {
 		skinGroupNames.forEach(skinGroupName => {
 			element = skinButtonRowElement.clone();
 			element.find(".rowTitle").html(skinGroupName);			
+			
 
 			skinGroups[skinGroupName].forEach(skin => {
 				//make individual skin buttons
 				
 				element2 = skinButtonElement.clone();
+				//set zoom
+				element2.attr("class",zooms[zoom] + " text-center");
 				element2.find(".skinName").html(skin.name);			
 				element2.find(".skinButton").attr("src",`http://mariejuku.github.io/${skin.src}`);
 
@@ -196,12 +209,21 @@ $( document ).ready(function() {
     // $("skinChooser > .loader").addClass("hidden");
     // $("skinChooser > .main").removeClass("hidden");
 
+	setZoom = function(zoomValue) {
+		zoom = zoomValue;
+		$(".skinButtons .rowContent>div").attr("class",zooms[zoom] + " text-center");
+    }
+
 	
-	//apply hooks to buttons
+	//apply hooks to buttons (global)
 	$("button.packSelectButton").click(function(){
 		selectPack($(this).attr("packid"));
 	});
 	
+	$("button.zoomButton").click(function(){
+		setZoom($(this).attr("zoom"));
+	});
+
 	currentPack = selectPack("turbo");
 
 	function copyTextToClipboard(text) {
