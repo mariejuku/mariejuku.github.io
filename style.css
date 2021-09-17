@@ -324,12 +324,16 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	color:#eee;
 	border-color:#eee;
 	background-color: #111c;
+	padding:1px;
 }
 
 .btn-sm {
 	height: 35px;
     font-size: 1.25rem;
 	border-radius: 8px;
+}
+.btn-lg {
+	height: 100px;
 }
 .btn:not(:first-child) {
 	margin-left:8px;
@@ -346,33 +350,42 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 .btn.selected {
 	border-color:#FFC926;
 	box-shadow: 0 0 0 0.1rem #FFC926;
+	background-color:#FFC92633;
 }
 
 .btn .icon {
 	overflow:hidden;
-	margin: -4px 10px -4px -10px;
-	height:44px;
-	width:44px;
-	border-radius: 22px;
+	height:46px;
+	width:46px;
+	border-radius: 23px;
 	display:inline-block;
 }
+.btn .icon img {
+	height:46px;
+}
 .btn .label {
-	vertical-align:top;
 	overflow:hidden;
 	display:inline-block;
-	height:36px;
 	margin-right:4px;
+}
+.btn-lg .icon {
+	height:96px;
+	width:96px;
+}
+.btn-lg .icon img {
+	height:96px;
 }
 .hidden {
 	display:none;
 }
 .buttonContainer {
 	background-color: #666c;
-	border-radius:30px;
+	border-radius:28px;
 	margin-bottom:8px;
+	padding:2px;
 }
-.buttonContainer>.col-auto {
-	padding:5px;
+.buttonContainer>.col-auto, .buttonContainer>.col, .buttonContainer>.col-12 {
+	padding:2px;
 }
 
 .skinButton {
@@ -397,6 +410,16 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	border-color:#FA0032;
 	box-shadow: 0 0 0 0.1rem #FA0032;
 	transition: border-color 0s, box-shadow 0s;
+}
+
+.environmentControls, .platformControls {
+	transition:max-height .5s;
+	max-height:200px;
+	overflow:hidden;
+}
+.environmentControls.hidden, .platformControls.hidden {
+	display:block;
+	max-height:0;
 }
 
 @media (max-width: 575.98px) { 

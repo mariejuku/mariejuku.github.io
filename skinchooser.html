@@ -53,7 +53,7 @@
 						<div class="hidden loader col container-fluid text-center"><img src="img/loader.gif"></div>
 						<div class="content col">
 							<div class="row buttonContainer no-gutters justify-content-between">
-							
+								
 							</div>
 						</div>	
 					</div>
@@ -65,31 +65,224 @@
 								Zoom
 								</button>
 								<div class="dropdown-menu" aria-labelledby="zoomButton">
-								<button class="dropdown-item zoomButton" zoom="6">6-up</button>
-								<button class="dropdown-item zoomButton" zoom="4">4-up</button>
-								<button class="dropdown-item zoomButton" zoom="3">3-up</button>
-								<button class="dropdown-item zoomButton" zoom="2">2-up</button>
+									<button class="dropdown-item zoomButton" zoom="6">6-up</button>
+									<button class="dropdown-item zoomButton" zoom="4">4-up</button>
+									<button class="dropdown-item zoomButton" zoom="3">3-up</button>
+									<button class="dropdown-item zoomButton" zoom="2">2-up</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row packDetails">
 						<div class="content col">
-							
+							<p class="itemCount">30 items</p>
 						</div>	
 					</div>
-					
-
+					<div class="row platformControls">
+						<div class="content col">
+							<h3 class="stretchX">Platform</h3>
+							<div class="row buttonContainer no-gutters justify-content-between">
+								<div class="col-12 col-lg-6">
+									<button type="button" class="btn btn-block platformButton btn-lg" platform="tm2">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbPlatformManiaplanet.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Maniaplanet / TM2</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div class="col-12 col-lg-6">
+									<button type="button" class="btn btn-block platformButton btn-lg" platform="2020">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbPlatform2020.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Trackmania 2020</div>
+											</div>
+										</div>
+									</button>
+								</div>
+							</div>
+						</div>	
+						<div class="col-12 text-center">
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="row environmentControls">
+						<div class="content col">
+							<h3 class="stretchX">Environment</h3>
+							<div class="row buttonContainer no-gutters justify-content-between">
+								<div class="col-12 col-md-6 col-xl-3">
+									<button type="button" class="btn btn-block environmentButton btn-lg" environment="canyon">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbEnvironmentCanyon.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Canyon</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div class="col-12 col-md-6 col-xl-3">
+									<button type="button" class="btn btn-block environmentButton btn-lg" environment="valley">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbEnvironmentValley.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Valley</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div class="col-12 col-md-6 col-xl-3">
+									<button type="button" class="btn btn-block environmentButton btn-lg" environment="stadium">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbEnvironmentStadium.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Stadium</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div class="col-12 col-md-6 col-xl-3">
+									<button type="button" class="btn btn-block environmentButton btn-lg" environment="lagoon">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="icon"><img src="trackmania/website/thumbEnvironmentLagoon.png"></div>
+											</div>
+											<div class="col pl-0 mr-2">
+												<div class="label">Lagoon</div>
+											</div>
+										</div>
+									</button>
+								</div>
+							</div>
+							<div class="col-12 text-center">
+								<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							</div>
+						</div>	
+					</div>
+					<div class="row packControls">
+						<div class="content col">
+							<div class="row buttonContainer no-gutters justify-content-between">
+								
+							</div>
+						</div>	
+					</div>
 					<div class="row skinButtons">
 						<div class="hidden loader col container-fluid text-center"><img src="img/loader.gif"></div>
 						<div class="content col"></div>	
 					</div>
 					
-					
-					<packDisplay></packDisplay>
-					<buttons class=""></buttons>
 					<packs class="hidden">
-						<pack packid="turbo" name="Trackmania Turbo" image="trackmania/turboSkins/thumbs/AD_try_hard_09.png" defaultAttribute="category">
+						<pack packid="modern" name="Marie's Modern Pack" image="trackmania/modernSkinPack/dist/lagoon/lag_ocean.png" 
+						defaultPlatform="tm2" defaultEnvironment="lagoon" defaultAttribute="category" showPlatform showEnvironment>
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/lagoon/" fileExt=".png" fileExtVideo=".webm"
+							platform="tm2" environment="lagoon" category="direction">	
+								<skin type="video" file="lag_arrow_up"></skin>
+								<skin type="video" file="lag_arrow_down"></skin>
+								<skin type="video" file="lag_arrow_left"></skin>
+								<skin type="video" file="lag_arrow_right"></skin>
+								<skin type="video" file="lag_arrow_left_up"></skin>
+								<skin type="video" file="lag_arrow_right_up"></skin>
+								<skin type="video" file="lag_arrow_right_down"></skin>
+								<skin type="video" file="lag_arrow_left_down"></skin>
+								<skin type="video" file="lag_leftChevronBlue"></skin>
+								<skin type="video" file="lag_rightChevronBlue"></skin>
+								<skin type="video" file="lag_upChevronBlue"></skin>
+								<skin type="video" file="lag_downChevronBlue"></skin>
+								<skin type="video" file="lag_leftChevronYellow"></skin>
+								<skin type="video" file="lag_rightChevronYellow"></skin>
+								<skin type="video" file="lag_upChevronYellow"></skin>
+								<skin type="video" file="lag_downChevronYellow"></skin>
+								<skin type="video" file="lag_leftChevronRed"></skin>
+								<skin type="video" file="lag_rightChevronRed"></skin>
+								<skin type="video" file="lag_upChevronRed"></skin>
+								<skin type="video" file="lag_downChevronRed"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/lagoon/" fileExt=".png" fileExtVideo=".webm"
+							platform="tm2" environment="lagoon" category="advertisement">
+								<skin type="image" file="lag_authormedal"></skin>
+								<skin type="image" file="lag_beach"></skin>
+								<skin type="video" file="lag_sunset"></skin>
+								<skin type="image" file="lag_ocean"></skin>
+								<skin type="image" file="lag_city_blue"></skin>
+								<skin type="image" file="lag_city_green"></skin>
+								<skin type="image" file="lag_city_black"></skin>
+								<skin type="image" file="lag_lagoon_blue"></skin>
+								<skin type="image" file="lag_lagoon_yellow"></skin>
+								<skin type="image" file="lag_lagoon_red"></skin>
+								<skin type="image" file="lag_lagoon_pink"></skin>
+								<skin type="image" file="lag_lagoon_white"></skin>
+								<skin type="image" file="lag_tm_yellow"></skin>
+								<skin type="image" file="lag_tm_red"></skin>
+								<skin type="image" file="lag_tm_blue"></skin>
+								<skin type="image" file="lag_tm_dark"></skin>
+								<skin type="image" file="lag_preserveNature"></skin>
+								<skin type="image" file="lag_preserveNature_top"></skin>
+								<skin type="image" file="lag_preserveNature_bottom"></skin>
+								<skin type="image" file="lag_trackMasters"></skin>
+								<skin type="image" file="lag_mx_blue"></skin>
+								<skin type="image" file="lag_mx"></skin>
+								<skin type="image" file="lag_mxlc"></skin>
+								<skin type="image" file="lag_openplanet"></skin>
+								<skin type="image" file="lag_openplanet_white"></skin>
+								<skin type="image" file="lag_openplanet_pride"></skin>
+								<skin type="image" file="lag_nadeo"></skin>
+								<skin type="video" file="lag_unbitn"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/lagoon/" fileExt=".png" fileExtVideo=".webm"
+								platform="tm2" environment="lagoon" category="road">
+								<skin type="image" file="lag_race"></skin>
+								<skin type="image" file="lag_series"></skin>
+								<skin type="image" file="lag_start"></skin>
+								<skin type="image" file="lag_multilap"></skin>
+								<skin type="image" file="lag_finish"></skin>
+								<skin type="image" file="lag_checkpoint"></skin>
+								<skin type="video" file="lag_checkpoint_left"></skin>
+								<skin type="video" file="lag_checkpoint_right"></skin>
+								<skin type="video" file="lag_checkpoint2"></skin>
+								<skin type="video" file="lag_turbo"></skin>
+								<skin type="video" file="lag_turboRed"></skin>
+								<skin type="image" file="lag_brake"></skin>
+								<skin type="image" file="lag_drift"></skin>
+								<skin type="video" file="lag_noslide"></skin>
+								<skin type="image" file="lag_uturn_left"></skin>
+								<skin type="image" file="lag_uturn_right"></skin>
+								<skin type="video" file="lag_jump1_blue"></skin>
+								<skin type="video" file="lag_jump1_green"></skin>
+								<skin type="video" file="lag_jump1_yellow"></skin>
+								<skin type="video" file="lag_rollercoasterUpRed"></skin>
+								<skin type="video" file="lag_rollercoasterDownRed"></skin>
+								<skin type="video" file="lag_rollercoasterUpBlue"></skin>
+								<skin type="video" file="lag_rollercoasterDownBlue"></skin>
+							</skinPath>
+							<skinPath fileSrc="trackmania/modernSkinPack/dist/lagoon/" fileExt=".png" fileExtVideo=".webm"
+								platform="tm2" environment="lagoon" category="floor">
+								<skin type="video" file="lag_floorStartDown"></skin>
+								<skin type="video" file="lag_floorStartUp"></skin>
+								<skin type="video" file="lag_floorCheckpointDown"></skin>
+								<skin type="video" file="lag_floorCheckpointUp"></skin>
+								<skin type="video" file="lag_floorMultiDown"></skin>
+								<skin type="video" file="lag_floorMultiUp"></skin>
+								<skin type="video" file="lag_floorFinishDown"></skin>
+								<skin type="video" file="lag_floorFinishUp"></skin>
+								<skin type="video" file="lag_floorJumpDown"></skin>
+								<skin type="video" file="lag_floorJumpUp"></skin>
+								<skin type="video" file="lag_floorLoopDown"></skin>
+								<skin type="video" file="lag_floorLoopUp"></skin>
+								<skin type="video" file="lag_floorDecoration"></skin>
+							</skinPath>
+						</pack>
+						<pack packid="turbo" name="Trackmania Turbo" image="trackmania/modernSkinPack/dist/lagoon/lag_preserveNature.png" defaultAttribute="category">
 							<skinPath fileSrc="trackmania/turboSkins/" fileExt=".dds" fileExtVideo=".webm"
 							thumbSrc="trackmania/turboSkins/thumbs/" thumbExt=".png"
 							category="advertisement" block="Advertisement 1x1">
@@ -257,10 +450,10 @@
 								<skin type="image" file="TMX_Logo_URL"></skin>
 							</skinPath>		
 						</pack>
-						<pack packid="lightPanels" name="Light Panel Pack" image="trackmania/lightPanels2/dist/light_red_royal.png" defaultAttribute="block"
-						platform>
+						<pack packid="lightPanels" name="Light Panel Pack" image="trackmania/lightPanels2/dist/light_red_royal.png"
+						defaultPlatform="2020" defaultEnvironment="tm2" defaultAttribute="block" showPlatform>
 							<skinPath fileSrc="trackmania/lightPanels2/dist/" fileExt=".png" fileExtVideo=".webm"
-							category="ad" block="sign (trackmania 2)" platform="maniaplanet">
+							category="ad" block="sign (trackmania 2)" platform="tm2" environment="tm2">
 								<skin type="image" file="light_blue_light"></skin>
 								<skin type="image" file="light_blue"></skin>
 								<skin type="image" file="light_blue_dark"></skin>
@@ -371,7 +564,414 @@
 								<skin type="image" file="pr_trans"></skin>
 							</skinPath>
 						</pack>
-						<pack packid="vtt" name="World Time Trial" image="img/lagoonPack.jpg" defaultAttribute="category">
+						<pack packid="mx2" name="ManiaExchange2 Pack (Legacy)" image="trackmania/turboSkins/thumbs/AD_try_hard_09.png" defaultAttribute="category">
+							<options>
+								<colour></colour>
+							</options>
+							<skinPath fileSrc="trackmania/mx2SkinPack/BLK" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/BLK/thumbs/" thumbExt=".png"
+							category="advertisement" colour="black">
+								<skin type="image" file="Ads_Enai"></skin>
+								<skin type="image" file="Ads_Maniapark"></skin> 
+								<skin type="image" file="Ads_ManiaPlanet"></skin> 
+								<skin type="image" file="Ads_ManiaPlanet_Large"></skin> 
+								<skin type="image" file="Ads_MX"></skin> 
+								<skin type="image" file="Ads_Nadeo"></skin> 
+								<skin type="image" file="Ads_QM"></skin> 
+								<skin type="image" file="Ads_SM"></skin> 
+								<skin type="image" file="Ads_TM"></skin> 
+								<skin type="image" file="Ads_TMX"></skin> 
+								<skin type="image" file="Ads_Trackmania"></skin> 
+								<skin type="image" file="Ads_Ubisoft"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/BLK" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/BLK/thumbs/" thumbExt=".png"
+							category="arrows" colour="black">
+								<skin type="image" file="Arrows_Bank_Down_L"></skin> 
+								<skin type="image" file="Arrows_Bank_Down_R"></skin> 
+								<skin type="image" file="Arrows_Bank_Up_L"></skin> 
+								<skin type="image" file="Arrows_Bank_Up_R"></skin> 
+								<skin type="image" file="Arrows_Boost_Brake"></skin> 
+								<skin type="image" file="Arrows_Boost_Random"></skin> 
+								<skin type="image" file="Arrows_Boost_Regular"></skin> 
+								<skin type="image" file="Arrows_Boost_Super"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_DL"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_DR"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_UL"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_UR"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_D"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_U"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Drift_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Drift_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_Straight"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Narrow"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Split"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Split_Warning"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Squeeze_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Squeeze_R"></skin> 
+								<skin type="image" file="Arrows_Corkscrew_L"></skin> 
+								<skin type="image" file="Arrows_Corkscrew_R"></skin> 
+								<skin type="image" file="Arrows_Parallel_L"></skin> 
+								<skin type="image" file="Arrows_Parallel_R"></skin> 
+								<skin type="image" file="Arrows_Parallel_Straight1"></skin> 
+								<skin type="image" file="Arrows_Parallel_Straight2"></skin> 
+								<skin type="image" file="Arrows_Regular_Chicane_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Chicane_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_135_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_135_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_180_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_180_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_225_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_225_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_360_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_360_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_45_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_45_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_90_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_90_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_DL"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_DR"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_UL"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_UR"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_D"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_U"></skin> 
+								<skin type="image" file="Arrows_Regular_Fork"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Split"></skin> 
+								<skin type="image" file="Arrows_Regular_Triple_D"></skin> 
+								<skin type="image" file="Arrows_Regular_Triple_U"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_180_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_180_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_90_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_90_R"></skin> 
+								<skin type="image" file="Arrows_Respawn_L"></skin> 
+								<skin type="image" file="Arrows_Respawn_R"></skin> 
+								<skin type="image" file="Arrows_Respawn_Straight"></skin> 
+								<skin type="image" file="Arrows_TrackType_Easy"></skin> 
+								<skin type="image" file="Arrows_TrackType_Fast"></skin> 
+								<skin type="image" file="Arrows_TrackType_Hard"></skin> 
+								<skin type="image" file="Arrows_TrackType_Slow"></skin> 
+								<skin type="image" file="Arrows_Transition_L"></skin> 
+								<skin type="image" file="Arrows_Transition_R"></skin> 
+								<skin type="image" file="Arrows_Transition_Straight"></skin> 
+								<skin type="image" file="Arrows_Wallride_L"></skin> 
+								<skin type="image" file="Arrows_Wallride_R"></skin> 
+								<skin type="image" file="Arrows_Asymmetric_L"></skin> 
+								<skin type="image" file="Arrows_Asymmetric_R"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/BLK" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/BLK/thumbs/" thumbExt=".png"
+							category="road" colour="black">
+								<skin type="image" file="Features_BumpyRoad"></skin> 
+								<skin type="image" file="Features_Checkpoint"></skin> 
+								<skin type="image" file="Features_Cliff"></skin> 
+								<skin type="image" file="Features_Darkness"></skin> 
+								<skin type="image" file="Features_Enginekiller"></skin> 
+								<skin type="image" file="Features_Finish"></skin> 
+								<skin type="image" file="Features_Jump"></skin> 
+								<skin type="image" file="Features_Loop_L"></skin> 
+								<skin type="image" file="Features_Loop_R"></skin> 
+								<skin type="image" file="Features_LowClearance"></skin> 
+								<skin type="image" file="Features_Multilap"></skin> 
+								<skin type="image" file="Features_Multilap_Lap1"></skin> 
+								<skin type="image" file="Features_Multilap_Lap2"></skin> 
+								<skin type="image" file="Features_Multilap_Lap2AndUp"></skin> 
+								<skin type="image" file="Features_Multilap_Lap3"></skin> 
+								<skin type="image" file="Features_Offroad"></skin> 
+								<skin type="image" file="Features_Pillars"></skin> 
+								<skin type="image" file="Features_PressForward"></skin> 
+								<skin type="image" file="Features_ReUse_01"></skin> 
+								<skin type="image" file="Features_ReUse_02"></skin> 
+								<skin type="image" file="Features_ReUse_03"></skin> 
+								<skin type="image" file="Features_Reverse"></skin> 
+								<skin type="image" file="Features_Rocks"></skin> 
+								<skin type="image" file="Features_RollingStart"></skin> 
+								<skin type="image" file="Features_RoughRoad"></skin> 
+								<skin type="image" file="Features_Snake"></skin> 
+								<skin type="image" file="Features_StayCenter"></skin> 
+								<skin type="image" file="Features_Tunnel"></skin> 
+								<skin type="image" file="Features_TwoWay"></skin> 
+								<skin type="image" file="Features_Wall"></skin> 
+								<skin type="image" file="Features_WallScrape_L"></skin> 
+								<skin type="image" file="Features_WallScrape_R"></skin> 
+								<skin type="image" file="Features_WaterBounce"></skin> 
+								<skin type="image" file="Misc_Danger"></skin> 
+								<skin type="image" file="Misc_Death"></skin> 
+								<skin type="image" file="Misc_FeelingLucky"></skin> 
+								<skin type="image" file="Misc_GoodLuck"></skin> 
+								<skin type="image" file="Misc_Halt"></skin> 
+								<skin type="image" file="Misc_NoEntry"></skin> 
+								<skin type="image" file="Misc_SecretFound"></skin> 
+								<skin type="image" file="Misc_Target"></skin> 
+								<skin type="image" file="MT_CamChange"></skin> 
+								<skin type="image" file="MT_FollowMe"></skin> 
+								<skin type="image" file="MT_GPS"></skin> 
+								<skin type="image" file="MT_PitStop"></skin> 
+								<skin type="image" file="MT_PitStop_L"></skin> 
+								<skin type="image" file="MT_PitStop_R"></skin> 
+								<skin type="image" file="Novelty_FinishCake"></skin> 
+								<skin type="image" file="Novelty_QuestionMark"></skin> 
+								<skin type="image" file="Novelty_TunnelLotr"></skin> 
+								<skin type="image" file="Pacing_Accelerate"></skin> 
+								<skin type="image" file="Pacing_Corners"></skin> 
+								<skin type="image" file="Pacing_HighSpeed"></skin> 
+								<skin type="image" file="Pacing_LolSection"></skin> 
+								<skin type="image" file="Pacing_SlowDown"></skin> 
+								<skin type="image" file="Text_Boost"></skin> 
+								<skin type="image" file="Text_Brake"></skin> 
+								<skin type="image" file="Text_Caution"></skin> 
+								<skin type="image" file="Text_Danger"></skin> 
+								<skin type="image" file="Text_Faster"></skin> 
+								<skin type="image" file="Text_Jump"></skin> 
+								<skin type="image" file="Text_NoDrift"></skin> 
+								<skin type="image" file="Text_Slow"></skin> 
+								<skin type="image" file="Text_Stop"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/BLK" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/BLK/thumbs/" thumbExt=".png"
+							category="pacing" colour="black">
+								<skin type="image" file="Pacing_MaxSpeed_100"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_150"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_200"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_250"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_300"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_350"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_400"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_450"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_50"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_500"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_550"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_600"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_700"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_800"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_900"></skin> 
+								<skin type="image" file="Pacing_StayAbove_100"></skin> 
+								<skin type="image" file="Pacing_StayAbove_150"></skin> 
+								<skin type="image" file="Pacing_StayAbove_200"></skin> 
+								<skin type="image" file="Pacing_StayAbove_250"></skin> 
+								<skin type="image" file="Pacing_StayAbove_300"></skin> 
+								<skin type="image" file="Pacing_StayAbove_350"></skin> 
+								<skin type="image" file="Pacing_StayAbove_400"></skin> 
+								<skin type="image" file="Pacing_StayAbove_450"></skin> 
+								<skin type="image" file="Pacing_StayAbove_50"></skin> 
+								<skin type="image" file="Pacing_StayAbove_500"></skin> 
+								<skin type="image" file="Pacing_StayAbove_550"></skin> 
+								<skin type="image" file="Pacing_StayAbove_600"></skin> 
+								<skin type="image" file="Pacing_StayAbove_700"></skin> 
+								<skin type="image" file="Pacing_StayAbove_800"></skin> 
+								<skin type="image" file="Pacing_StayAbove_900"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/NEG" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/NEG/thumbs/" thumbExt=".png"
+							category="advertisement" colour="white">
+								<skin type="image" file="Ads_Enai"></skin>
+								<skin type="image" file="Ads_Maniapark"></skin> 
+								<skin type="image" file="Ads_ManiaPlanet"></skin> 
+								<skin type="image" file="Ads_ManiaPlanet_Large"></skin> 
+								<skin type="image" file="Ads_MX"></skin> 
+								<skin type="image" file="Ads_Nadeo"></skin> 
+								<skin type="image" file="Ads_QM"></skin> 
+								<skin type="image" file="Ads_SM"></skin> 
+								<skin type="image" file="Ads_TM"></skin> 
+								<skin type="image" file="Ads_TMX"></skin> 
+								<skin type="image" file="Ads_Trackmania"></skin> 
+								<skin type="image" file="Ads_Ubisoft"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/NEG" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/NEG/thumbs/" thumbExt=".png"
+							category="arrows" colour="white">
+								<skin type="image" file="Arrows_Bank_Down_L"></skin> 
+								<skin type="image" file="Arrows_Bank_Down_R"></skin> 
+								<skin type="image" file="Arrows_Bank_Up_L"></skin> 
+								<skin type="image" file="Arrows_Bank_Up_R"></skin> 
+								<skin type="image" file="Arrows_Boost_Brake"></skin> 
+								<skin type="image" file="Arrows_Boost_Random"></skin> 
+								<skin type="image" file="Arrows_Boost_Regular"></skin> 
+								<skin type="image" file="Arrows_Boost_Super"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_DL"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_DR"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_UL"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Diag_UR"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_D"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Dir_U"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Drift_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Drift_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_R"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Jump_Straight"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Narrow"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Split"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Split_Warning"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Squeeze_L"></skin> 
+								<skin type="image" file="Arrows_Chevrons_Squeeze_R"></skin> 
+								<skin type="image" file="Arrows_Corkscrew_L"></skin> 
+								<skin type="image" file="Arrows_Corkscrew_R"></skin> 
+								<skin type="image" file="Arrows_Parallel_L"></skin> 
+								<skin type="image" file="Arrows_Parallel_R"></skin> 
+								<skin type="image" file="Arrows_Parallel_Straight1"></skin> 
+								<skin type="image" file="Arrows_Parallel_Straight2"></skin> 
+								<skin type="image" file="Arrows_Regular_Chicane_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Chicane_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_135_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_135_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_180_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_180_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_225_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_225_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_360_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_360_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_45_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_45_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_90_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Curve_90_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_DL"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_DR"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_UL"></skin> 
+								<skin type="image" file="Arrows_Regular_Diag_UR"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_D"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Dir_U"></skin> 
+								<skin type="image" file="Arrows_Regular_Fork"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Jump_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Split"></skin> 
+								<skin type="image" file="Arrows_Regular_Triple_D"></skin> 
+								<skin type="image" file="Arrows_Regular_Triple_U"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_180_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_180_R"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_90_L"></skin> 
+								<skin type="image" file="Arrows_Regular_Warning_90_R"></skin> 
+								<skin type="image" file="Arrows_Respawn_L"></skin> 
+								<skin type="image" file="Arrows_Respawn_R"></skin> 
+								<skin type="image" file="Arrows_Respawn_Straight"></skin> 
+								<skin type="image" file="Arrows_TrackType_Easy"></skin> 
+								<skin type="image" file="Arrows_TrackType_Fast"></skin> 
+								<skin type="image" file="Arrows_TrackType_Hard"></skin> 
+								<skin type="image" file="Arrows_TrackType_Slow"></skin> 
+								<skin type="image" file="Arrows_Transition_L"></skin> 
+								<skin type="image" file="Arrows_Transition_R"></skin> 
+								<skin type="image" file="Arrows_Transition_Straight"></skin> 
+								<skin type="image" file="Arrows_Wallride_L"></skin> 
+								<skin type="image" file="Arrows_Wallride_R"></skin> 
+								<skin type="image" file="Arrows_Asymmetric_L"></skin> 
+								<skin type="image" file="Arrows_Asymmetric_R"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/NEG" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/NEG/thumbs/" thumbExt=".png"
+							category="road" colour="white">
+								<skin type="image" file="Features_BumpyRoad"></skin> 
+								<skin type="image" file="Features_Checkpoint"></skin> 
+								<skin type="image" file="Features_Cliff"></skin> 
+								<skin type="image" file="Features_Darkness"></skin> 
+								<skin type="image" file="Features_Enginekiller"></skin> 
+								<skin type="image" file="Features_Finish"></skin> 
+								<skin type="image" file="Features_Jump"></skin> 
+								<skin type="image" file="Features_Loop_L"></skin> 
+								<skin type="image" file="Features_Loop_R"></skin> 
+								<skin type="image" file="Features_LowClearance"></skin> 
+								<skin type="image" file="Features_Multilap"></skin> 
+								<skin type="image" file="Features_Multilap_Lap1"></skin> 
+								<skin type="image" file="Features_Multilap_Lap2"></skin> 
+								<skin type="image" file="Features_Multilap_Lap2AndUp"></skin> 
+								<skin type="image" file="Features_Multilap_Lap3"></skin> 
+								<skin type="image" file="Features_Offroad"></skin> 
+								<skin type="image" file="Features_Pillars"></skin> 
+								<skin type="image" file="Features_PressForward"></skin> 
+								<skin type="image" file="Features_ReUse_01"></skin> 
+								<skin type="image" file="Features_ReUse_02"></skin> 
+								<skin type="image" file="Features_ReUse_03"></skin> 
+								<skin type="image" file="Features_Reverse"></skin> 
+								<skin type="image" file="Features_Rocks"></skin> 
+								<skin type="image" file="Features_RollingStart"></skin> 
+								<skin type="image" file="Features_RoughRoad"></skin> 
+								<skin type="image" file="Features_Snake"></skin> 
+								<skin type="image" file="Features_StayCenter"></skin> 
+								<skin type="image" file="Features_Tunnel"></skin> 
+								<skin type="image" file="Features_TwoWay"></skin> 
+								<skin type="image" file="Features_Wall"></skin> 
+								<skin type="image" file="Features_WallScrape_L"></skin> 
+								<skin type="image" file="Features_WallScrape_R"></skin> 
+								<skin type="image" file="Features_WaterBounce"></skin> 
+								<skin type="image" file="Misc_Danger"></skin> 
+								<skin type="image" file="Misc_Death"></skin> 
+								<skin type="image" file="Misc_FeelingLucky"></skin> 
+								<skin type="image" file="Misc_GoodLuck"></skin> 
+								<skin type="image" file="Misc_Halt"></skin> 
+								<skin type="image" file="Misc_NoEntry"></skin> 
+								<skin type="image" file="Misc_SecretFound"></skin> 
+								<skin type="image" file="Misc_Target"></skin> 
+								<skin type="image" file="MT_CamChange"></skin> 
+								<skin type="image" file="MT_FollowMe"></skin> 
+								<skin type="image" file="MT_GPS"></skin> 
+								<skin type="image" file="MT_PitStop"></skin> 
+								<skin type="image" file="MT_PitStop_L"></skin> 
+								<skin type="image" file="MT_PitStop_R"></skin> 
+								<skin type="image" file="Novelty_FinishCake"></skin> 
+								<skin type="image" file="Novelty_QuestionMark"></skin> 
+								<skin type="image" file="Novelty_TunnelLotr"></skin> 
+								<skin type="image" file="Pacing_Accelerate"></skin> 
+								<skin type="image" file="Pacing_Corners"></skin> 
+								<skin type="image" file="Pacing_HighSpeed"></skin> 
+								<skin type="image" file="Pacing_LolSection"></skin> 
+								<skin type="image" file="Pacing_SlowDown"></skin> 
+								<skin type="image" file="Text_Boost"></skin> 
+								<skin type="image" file="Text_Brake"></skin> 
+								<skin type="image" file="Text_Caution"></skin> 
+								<skin type="image" file="Text_Danger"></skin> 
+								<skin type="image" file="Text_Faster"></skin> 
+								<skin type="image" file="Text_Jump"></skin> 
+								<skin type="image" file="Text_NoDrift"></skin> 
+								<skin type="image" file="Text_Slow"></skin> 
+								<skin type="image" file="Text_Stop"></skin> 
+							</skinPath>
+							<skinPath fileSrc="trackmania/mx2SkinPack/NEG" fileExt=".dds"
+							thumbSrc="trackmania/mx2SkinPack/NEG/thumbs/" thumbExt=".png"
+							category="pacing" colour="white">
+								<skin type="image" file="Pacing_MaxSpeed_100"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_150"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_200"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_250"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_300"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_350"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_400"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_450"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_50"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_500"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_550"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_600"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_700"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_800"></skin> 
+								<skin type="image" file="Pacing_MaxSpeed_900"></skin> 
+								<skin type="image" file="Pacing_StayAbove_100"></skin> 
+								<skin type="image" file="Pacing_StayAbove_150"></skin> 
+								<skin type="image" file="Pacing_StayAbove_200"></skin> 
+								<skin type="image" file="Pacing_StayAbove_250"></skin> 
+								<skin type="image" file="Pacing_StayAbove_300"></skin> 
+								<skin type="image" file="Pacing_StayAbove_350"></skin> 
+								<skin type="image" file="Pacing_StayAbove_400"></skin> 
+								<skin type="image" file="Pacing_StayAbove_450"></skin> 
+								<skin type="image" file="Pacing_StayAbove_50"></skin> 
+								<skin type="image" file="Pacing_StayAbove_500"></skin> 
+								<skin type="image" file="Pacing_StayAbove_550"></skin> 
+								<skin type="image" file="Pacing_StayAbove_600"></skin> 
+								<skin type="image" file="Pacing_StayAbove_700"></skin> 
+								<skin type="image" file="Pacing_StayAbove_800"></skin> 
+								<skin type="image" file="Pacing_StayAbove_900"></skin>
+							</skinPath>
+						</pack>
+						<pack packid="vtt" name="World Time Trial" image="trackmania/modernSkinPack/dist/VTTpack/Advertisement/vtt_adVTT2.png" defaultAttribute="category">
 							<skinPath fileSrc="trackmania/modernSkinPack/dist/VTTpack/Advertisement/" fileExt=".png" fileExtVideo=".webm"
 							block="sign">
 								<skin type="image" file="vtt_adAuthorMedal" category="ad"></skin>
@@ -418,11 +1018,30 @@
 						<packButton>
 							<div class="col-auto">
 								<button type="button" class="btn packSelectButton" packid="">
-									<div class="icon"><img src="img/lagoonPack.jpg" height="44"></div>
-									<div class="label">ManiaExchange Pack</div>
+									<div class="row align-items-center">
+										<div class="col-auto">
+											<div class="icon"><img src="img/lagoonPack.jpg"></div>
+										</div>
+										<div class="col pl-0 mr-2">
+											<div class="label">ManiaExchange Pack</div>
+										</div>
+									</div>
 								</button>
 							</div>
 						</packButton>
+						<packAttributeButton>
+							<div class="col-auto">
+								<div class="dropdown">
+									<button class="btn btn-secondary dropdown-toggle packAttributeButton" attribute="" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<div class="label">ManiaExchange Pack</div>
+									</button>
+									<div class="dropdown-menu"></div>
+								</div>
+							</div>
+						</packAttributeButton>
+						<packAttributeButtonOption>
+							<button class="dropdown-item packAttributeButtonOption" attribute="" option="">6-up</button>
+						</packAttributeButtonOption>
 						<skinButton>
 							<div class="col-2">
 								<button class="btn skinButton mx-1" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png">

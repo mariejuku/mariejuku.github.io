@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
 	packButtonElement = $('elements>packButton>div');
+	packButtonAttributeElement = $('elements>packAttributeButton>div');
+	packAttributeButtonOptionElement = $('elements>packAttributeButtonOption>button');
 	skinButtonElement = $('elements>skinButton>div');
 	skinButtonRowElement = $('elements>skinButtonRow>div');
 	console.log(skinButtonRowElement);
@@ -13,20 +15,59 @@ $( document ).ready(function() {
 	}
 
 	skins = [];
-	skinGroups = {};
-	skinGroupNames = [];
+	skinDisplayGroups = {};
+	skinDisplayGroupNames = [];
 
 	packIds = [];
 	packs = {};
 	currentPack = undefined; //currently chosen pack
-	currentGroupAttribute = undefined; 
+	groupAttribute = undefined; 
+
+	platform = 'tm2';
+	environment = 'stadium';
 	//collect packs data
 	$('packs>pack').each(function(){
 		var pack = {};
 		pack.id = $(this).attr("packid"); 
 		pack.name = $(this).attr("name");
 		pack.imageSrc = $(this).attr("image");
+		pack.defaultPlatform = $(this).attr("defaultPlatform");
+		pack.defaultEnvironment = $(this).attr("defaultEnvironment");
 		pack.defaultAttribute = $(this).attr("defaultAttribute");
+		pack.showPlatform = $(this).attr("showPlatform") !== undefined;
+		pack.showEnvironment = $(this).attr("showEnvironment") !== undefined;
+
+		//get pack attributes
+		pack.attributes = {};
+		pack.attributesNames = [];
+
+		$(this).find('attributes').children().each(function(){
+			attributeName = $(this).prop("tagName").toLowerCase();
+			pack.attributesNames.push(attributeName);
+			pack.attributes[attributeName] = {
+				name: attributeName,
+				options: [],
+				collapse: false, //if collapse is true, false matches in this attribute get discarded instead of delayed
+			};
+			$(this).children('*').each(function(){
+				pack.attributes[attributeName].options.push($(this).prop("tagName"));
+			});
+		});
+
+		//set up pack variants
+		pack.variantNames = [];
+		pack.variants = {};
+
+		$(this).find('variants').children().each(function(){
+			variantName = $(this).prop("tagName").toLowerCase();
+			pack.variantNames.push(variantName);
+			pack.variants[variantName] = {
+				name: variantName,
+				options: [],
+				selected: undefined
+			};
+		});
+
 		//get pack skins
 		pack.skins = [];
 		$(this).find('skinPath').each(function(){
@@ -43,7 +84,7 @@ $( document ).ready(function() {
 			//get attributes
 			pathCategory = $(this).attr('category');
 			pathBlock = $(this).attr('block');
-			pathColor = $(this).attr('color');
+			pathColour = $(this).attr('colour');
 			pathDirection = $(this).attr('direction');
 			pathPlatform = $(this).attr('platform');
 			pathEnvironment = $(this).attr('environment');
@@ -64,25 +105,40 @@ $( document ).ready(function() {
 				//inherit attributes
 				skin.category = pathCategory;
 				skin.block = pathBlock;
-				skin.color = pathColor;
+				skin.colour = pathColour;
 				skin.direction = pathDirection;
 				skin.platform = pathPlatform;
 				skin.environment = pathEnvironment;
 				
 				if ($(this).attr('category') != undefined) { skin.category = $(this).attr('category'); }
 				if ($(this).attr('block') != undefined) { skin.block = $(this).attr('block'); }
-				if ($(this).attr('color') != undefined) { skin.color = $(this).attr('color'); }
+				if ($(this).attr('colour') != undefined) { skin.colour = $(this).attr('colour'); }
 				if ($(this).attr('direction') != undefined) { skin.direction = $(this).attr('direction'); }
 				if ($(this).attr('platform') != undefined) { skin.platform = $(this).attr('platform'); }
 				if ($(this).attr('environment') != undefined) { skin.environment = $(this).attr('environment'); }
-				//finish
+				//add skin to pack
 				pack.skins.push(skin);
-			});
-		});
 
+				//update pack variant options
+				pack.variantNames.forEach(variantName => {
+					
+					if (skin[variantName] != undefined) {
+						
+						//the skin contains a variant
+						variantOption = skin[variantName];
+						if (pack.variants[variantName].options.indexOf(variantOption) == -1) {
+							pack.variants[variantName].options.push(variantOption);
+						}
+					}
+				});
+			});
+
+			
+		});
 		packs[pack.id] = pack;
 		packIds.push(pack.id);
 	});
+
 	console.log(packs);
 
 	//display pack buttons
@@ -95,6 +151,82 @@ $( document ).ready(function() {
 		$('.packButtons .buttonContainer').append(element);
 	});
 
+	makePackControls = function(packId) {
+		//clear the content area
+		$('.packControls .buttonContainer').html("");
+		pack = packs[packId];
+		attributesNames = pack.attributesNames;
+		attributes = pack.attributes;
+		attributesNames.forEach(attributeName => {
+			attribute = attributes[attributeName];
+			element = packButtonAttributeElement.clone();
+			element.find("button.packAttributeButton").attr("attribute",attributeName);
+			element.find(".label").html(attributeName);
+			$('.packControls .buttonContainer').append(element);
+
+			//add options
+			attribute.options.forEach(option => {
+				element2 = packAttributeButtonOptionElement.clone();
+				element2.html(option);
+				element2.attr('attribute',attributeName);
+				element2.attr('option',option);
+				$(`.packAttributeButton[attribute="${attributeName}"]`).parent('.dropdown').children('.dropdown-menu').append(element2);
+			});
+		});
+		//hook controls
+		$("button.packAttributeButtonOption").click(function(){
+			console.log($(this).attr('attribute'),$(this).attr('option'));
+			selectPackAttribute($(this).attr('attribute'),$(this).attr('option'));
+		});
+	}
+
+	selectPackPlatform = function(platformName) {
+		platform = platformName;
+		$("button.platformButton").removeClass('selected');
+		$(`button.platformButton[platform="${platformName}"]`).addClass('selected');
+		if (platformName === '2020') {
+			selectPackEnvironment('stadium2020');
+			$(".environmentControls").addClass('hidden');
+		} else {
+			selectPackEnvironment(pack.defaultEnvironment);
+			$(".environmentControls").addClass('hidden');
+			if (pack.showEnvironment) { $(".environmentControls").removeClass('hidden');}
+		}
+	}
+
+	selectPackEnvironment = function(environmentName) {
+		environment = environmentName;
+		$("button.environmentButton").removeClass('selected');
+		$(`button.environmentButton[environment="${environmentName}"]`).addClass('selected');
+		
+	}
+
+	// selectPackVariant = function(variantName,optionName) {
+	// 	pack = currentPack;
+	// 	//choose option
+	// 	pack.variants[variantName].selected = optionName;
+
+	// 	//update button look
+	// 	labelName = variantName.toLowerCase();
+	// 	labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
+	// 	labelOption = optionName.toLowerCase();
+	// 	labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
+	// 	$(`button.packAttributeButton[attribute="${variantName}"] .label`).html(`${labelName}: ${labelOption}`);
+	// }
+
+	// selectPackAttribute = function(attributeName,optionName) {
+	// 	pack = currentPack;
+	// 	//choose option
+	// 	pack.attributes[attributeName].selected = optionName;
+
+	// 	//update button look
+	// 	labelName = attributeName.toLowerCase();
+	// 	labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
+	// 	labelOption = optionName.toLowerCase();
+	// 	labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
+	// 	$(`button.packAttributeButton[attribute="${attributeName}"] .label`).html(`${labelName}: ${labelOption}`);
+	// }
+
     selectPack = function(packid) {
 		//change button classes
 		$("button.packSelectButton").removeClass('selected');
@@ -104,63 +236,96 @@ $( document ).ready(function() {
 		pack = packs[packid];
 		currentPack = pack;
 
+		groupAttribute = pack.defaultAttribute;
+
 		$(".packTitle").html(pack.name);
 
-		groupBy(pack.defaultAttribute);
+		$(".platformControls").addClass('hidden');
+		$(".environmentControls").addClass('hidden');
 
-		makeButtons();
+		if (pack.showPlatform) { $(".platformControls").removeClass('hidden');}
 
-		// $("skinChooser .packloader").removeClass("hidden");
-    	
-		// $(".packSelectButton").removeClass("selected");
-		// $(`.packSelectButton[packid="${packid}"]`).addClass("selected");
-
-		// //populate pack
-		// $("skinChooser .packTitle").html($(`skinChooserData > pack[packid="${packid}"]`).attr("name"));
-		// //generate available environments
-		// $("skinChooser environments").html("");
-		// //add 'any'
-		// $("skinChooser environments").append(`<button type="button" class="btn environmentSelectButton" environment="any"><div class="label">All</div></button>`)
 		
-		// $(`skinChooserData > pack[packid="${packid}"] > environment`).each(function() {
-		// 	$("skinChooser environments").append(`<button type="button" class="btn environmentSelectButton" environment="${$(this).attr("type")}"><div class="label">${$(this).attr("name")}</div></button>`)
-		// });
+		selectPackPlatform(pack.defaultPlatform);
 		
-		
-		// //end loading
-		// $("skinChooser .pack").removeClass("hidden");
-		// $("skinChooser .packloader").addClass("hidden");
-    }
 
-	groupBy = function(attribute) {
-		currentGroupAttribute = attribute;
+		makePackControls(packid);
 
-		skinGroups = {}
-		skinGroupNames = []
-
-		pack.skins.forEach(skin => {
-			//make group if necessary
-			if (!(skin[attribute] in skinGroups)) {
-				skinGroups[skin[attribute]] = []
-				skinGroupNames.push(skin[attribute]);
-			}
-			skinGroups[skin[attribute]].push(skin);
+		pack.variantNames.forEach(variantName => {
+			variant = pack.variants[variantName];
+			selectPackVariant(variantName,variant.options[0]);	
 		});
 
-		console.log(skinGroups);
-		console.log(skinGroupNames);
+		displaySkins();
+    }
+
+	displaySkins = function() {
+		console.log(currentPack);
+		skins = skinsPlatformFilter(currentPack.skins);
+		if (platform !== '2020') {
+			skins = skinsEnvironmentFilter(skins);
+		}
+
+		makeDisplayGroups(skins,groupAttribute);
+
+		makeButtons();		
+	}
+
+	skinsPlatformFilter = function(skins) {
+		newSkins = [];
+		skins.forEach(skin => {
+			if (skin.platform === platform) {
+				newSkins.push(skin);
+			}
+		});
+		return newSkins;
+	}
+
+	skinsEnvironmentFilter = function(skins) {
+		newSkins = [];
+		skins.forEach(skin => {
+			if (skin.environment === environment) {
+				newSkins.push(skin);
+			}
+		});
+		return newSkins;
+	}
+
+	makeDisplayGroups = function(skins,attribute) {
+		currentGroupAttribute = attribute;
+
+		skinDisplayGroups = {}
+		skinDisplayGroupNames = []
+		itemCount = 0;
+
+		skins.forEach(skin => {
+			//make group if necessary
+			if (!(skin[attribute] in skinDisplayGroups)) {
+				skinDisplayGroups[skin[attribute]] = []
+				skinDisplayGroupNames.push(skin[attribute]);
+			}
+			skinDisplayGroups[skin[attribute]].push(skin);
+			itemCount++;
+		});
+		$('.packDetails .itemCount').html(`${itemCount} / ${currentPack.skins.length} items`);
+		console.log(skinDisplayGroups);
+		console.log(skinDisplayGroupNames);
 	}
 
 	makeButtons = function() {
 		//clear the content area
 		$('.skinButtons .content').html("");
+		//fail to
+		if (skinDisplayGroupNames.length === 0) {
+			$('.skinButtons .content').html(`<div class="col"><h3 class="stretchX">No items found with these filters.</h3></div>`);
+			return;
+		}
 		//make skin buttons
-		skinGroupNames.forEach(skinGroupName => {
+		skinDisplayGroupNames.forEach(skinDisplayGroupName => {
 			element = skinButtonRowElement.clone();
-			element.find(".rowTitle").html(skinGroupName);			
+			element.find(".rowTitle").html(skinDisplayGroupName);			
 			
-
-			skinGroups[skinGroupName].forEach(skin => {
+			skinDisplayGroups[skinDisplayGroupName].forEach(skin => {
 				//make individual skin buttons
 				
 				element2 = skinButtonElement.clone();
@@ -200,22 +365,22 @@ $( document ).ready(function() {
 		});
 	}
 
-    // //generate available packs
-    // $("skinChooserData > pack").each(function() {
-	// 	$("skinChooser packs").append(`<button type="button" class="btn packSelectButton" packid="${$(this).attr("packid")}"><div class="icon"><img src="${$(this).attr("img")}" height="44"/></div><div class="label">${$(this).attr("name")}</div></button>`)
-    // });
-
-    // //complete initial loading
-    // $("skinChooser > .loader").addClass("hidden");
-    // $("skinChooser > .main").removeClass("hidden");
-
 	setZoom = function(zoomValue) {
 		zoom = zoomValue;
 		$(".skinButtons .rowContent>div").attr("class",zooms[zoom] + " text-center");
     }
-
 	
 	//apply hooks to buttons (global)
+	$("button.platformButton").click(function(){
+		selectPackPlatform($(this).attr("platform"));
+		displaySkins();
+	});
+
+	$("button.environmentButton").click(function(){
+		selectPackEnvironment($(this).attr("environment"));
+		displaySkins();
+	});
+
 	$("button.packSelectButton").click(function(){
 		selectPack($(this).attr("packid"));
 	});
@@ -224,7 +389,7 @@ $( document ).ready(function() {
 		setZoom($(this).attr("zoom"));
 	});
 
-	currentPack = selectPack("turbo");
+	selectPack("modern");
 
 	function copyTextToClipboard(text) {
 		var textArea = document.createElement("textarea");
