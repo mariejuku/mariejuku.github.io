@@ -10,6 +10,8 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+	
 	<link rel="stylesheet" href="style.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -60,15 +62,25 @@
 					<div class="row">
 						<div class="col"><h3 class="stretchX packTitle">World Time Trial</h3></div>
 						<div class="col-auto">
-							<div class="dropdown">
-								<button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="zoomButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Zoom
-								</button>
-								<div class="dropdown-menu" aria-labelledby="zoomButton">
-									<button class="dropdown-item zoomButton" zoom="6">6-up</button>
-									<button class="dropdown-item zoomButton" zoom="4">4-up</button>
-									<button class="dropdown-item zoomButton" zoom="3">3-up</button>
-									<button class="dropdown-item zoomButton" zoom="2">2-up</button>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-sm disabled">Animation</button>
+								<input class="playVideoCheckbox" type="checkbox" checked data-toggle="toggle" data-size="sm" data-width="125"
+								data-on="<i class='fa fa-play pt-1 mr-2'></i>Playing" data-off="<i class='fa fa-pause pt-1 mr-2'></i>Paused" data-offstyle="primary">
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-sm disabled">Zoom</button>
+								<div class="btn-group" role="group">
+									<button class="btn btn-sm dropdown-toggle zoomLabel" type="button" id="zoomButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										6-up
+									</button>
+									<div class="dropdown-menu" aria-labelledby="zoomButton">
+										<button class="dropdown-item zoomButton" zoom="6">6-up</button>
+										<button class="dropdown-item zoomButton" zoom="4">4-up</button>
+										<button class="dropdown-item zoomButton" zoom="3">3-up</button>
+										<button class="dropdown-item zoomButton" zoom="2">2-up</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1212,7 +1224,7 @@
 										<div class="col"><img class="img-fluid" src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_adAuthorMedal.png"/></div>
 									</div>
 									<div class="video row hidden">
-										<div class="col"><video class="img-fluid" loop muted autoplay src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_arrowLeftRed.webm"></div>
+										<div class="col"><video class="img-fluid" loop muted src="trackmania/modernSkinPack/dist/VTTPack/Advertisement/vtt_arrowLeftRed.webm"></div>
 									</div>
 									<div class="row">
 										<div class="col">
@@ -1260,6 +1272,7 @@
 	<footer>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 		<script src="script.js" defer></script>
 		<script src="skinChooser.js" defer></script>
 	</footer>

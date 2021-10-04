@@ -363,12 +363,38 @@ $( document ).ready(function() {
 			};
 			setTimeout(unhide,1000,$(this));
 		});
+		if ($(".playVideoCheckbox").prop('checked')) {
+			$('button.skinButton .video:not(.hidden) video').each(function(){
+				$(this).get(0).play(); 
+			});
+		}
+		$('button.skinButton .video:not(.hidden) video').mouseover(function(){ 
+			$(this).get(0).play(); 
+		}).mouseout(function(){ 
+			if (!($(".playVideoCheckbox").prop('checked'))) {
+				$(this).get(0).pause(); 
+			}
+		})
 	}
 
 	setZoom = function(zoomValue) {
 		zoom = zoomValue;
 		$(".skinButtons .rowContent>div").attr("class",zooms[zoom] + " text-center");
+		$(".zoomLabel").html(`${zoomValue}-up`);
     }
+
+	setVideoPlaying = function(playing) {
+		console.log("heck");
+		if (playing) {
+			$('.btn.skinButton .video:not(.hidden) video').each(function(){
+				$(this).get(0).play();
+			});
+		} else {
+			$('.btn.skinButton .video:not(.hidden) video').each(function(){
+				$(this).get(0).pause();
+			});
+		}
+	}
 	
 	//apply hooks to buttons (global)
 	$("button.platformButton").click(function(){
@@ -389,7 +415,18 @@ $( document ).ready(function() {
 		setZoom($(this).attr("zoom"));
 	});
 
+	$(".playVideoCheckbox").change(function(){
+		if ($(this).prop('checked')) {
+			setVideoPlaying(true);
+		} else {
+			setVideoPlaying(false);
+		}
+	});
+
+	$(".playVideoCheckbox").bootstrapToggle('off');
+
 	selectPack("modern");
+	setVideoPlaying(false);
 
 	function copyTextToClipboard(text) {
 		var textArea = document.createElement("textarea");

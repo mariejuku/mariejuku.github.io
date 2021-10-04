@@ -331,6 +331,8 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	height: 35px;
     font-size: 1.25rem;
 	border-radius: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 .btn-lg {
 	height: 100px;
@@ -338,8 +340,14 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 .btn:not(:first-child) {
 	margin-left:8px;
 }
+.toggle.btn .btn {
+	margin-left:0;
+}
+.toggle-handle { background:#FFC926; border-radius:1px;}
+.toggle-on {border-radius:0; background:#00DF7066;}
+.toggle-off {border-radius:0; background:#FA003266;}
 
-.btn:hover {
+.btn:not(.disabled):hover {
 	color:#333;
 	border-color:#FFC926;
 	background-color: #FFC926;
