@@ -352,6 +352,9 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	border-color:#FFC926;
 	background-color: #FFC926;
 }
+.btn:not(.disabled):hover .skinButtonIcons {
+	color:white;
+}
 .btn:focus {
 	box-shadow: 0 0 0 0.2rem #FFC926;
 }
@@ -418,6 +421,12 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	border-color:#FA0032;
 	box-shadow: 0 0 0 0.1rem #FA0032;
 	transition: border-color 0s, box-shadow 0s;
+}
+.skinButtonIcons {
+	position: absolute;
+    right: 10px;
+    bottom: 12px;
+	text-shadow: 0 0 4px black;
 }
 
 .environmentControls, .platformControls {

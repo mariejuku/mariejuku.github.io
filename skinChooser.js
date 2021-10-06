@@ -38,19 +38,18 @@ $( document ).ready(function() {
 		pack.showEnvironment = $(this).attr("showEnvironment") !== undefined;
 
 		//get pack attributes
-		pack.attributes = {};
-		pack.attributesNames = [];
+		pack.options = {};
+		pack.optionsNames = [];
 
-		$(this).find('attributes').children().each(function(){
-			attributeName = $(this).prop("tagName").toLowerCase();
-			pack.attributesNames.push(attributeName);
-			pack.attributes[attributeName] = {
-				name: attributeName,
-				options: [],
-				collapse: false, //if collapse is true, false matches in this attribute get discarded instead of delayed
+		$(this).find('options').children().each(function(){
+			optionName = $(this).prop("tagName").toLowerCase();
+			pack.optionsNames.push(optionName);
+			pack.options[optionName] = {
+				name: optionName,
+				options: []
 			};
 			$(this).children('*').each(function(){
-				pack.attributes[attributeName].options.push($(this).prop("tagName"));
+				pack.options[optionName].options.push($(this).prop("tagName"));
 			});
 		});
 
@@ -152,6 +151,7 @@ $( document ).ready(function() {
 	});
 
 	makePackControls = function(packId) {
+		return;
 		//clear the content area
 		$('.packControls .buttonContainer').html("");
 		pack = packs[packId];
@@ -337,6 +337,7 @@ $( document ).ready(function() {
 				if (skin.type === "video") {
 					element2.find(".skinButton .video").removeClass('hidden');
 					element2.find(".skinButton video").attr("src",skin.src);
+					element2.find(".skinButtonIcons .icon-animated").removeClass('hidden');
 				} else {
 					element2.find(".skinButton .image").removeClass('hidden');
 					element2.find(".skinButton img").attr("src",skin.thumbSrc);
@@ -375,6 +376,7 @@ $( document ).ready(function() {
 				$(this).get(0).pause(); 
 			}
 		})
+		$(".skinButtonIcons > i").tooltip();
 	}
 
 	setZoom = function(zoomValue) {
