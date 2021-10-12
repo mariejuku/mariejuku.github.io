@@ -25,6 +25,7 @@ $( document ).ready(function() {
 
 	platform = 'tm2';
 	environment = 'stadium';
+	block = 'any'; //skin block type
 	//collect packs data
 	$('packs>pack').each(function(){
 		var pack = {};
@@ -33,9 +34,11 @@ $( document ).ready(function() {
 		pack.imageSrc = $(this).attr("image");
 		pack.defaultPlatform = $(this).attr("defaultPlatform");
 		pack.defaultEnvironment = $(this).attr("defaultEnvironment");
+		pack.defaultBlock = $(this).attr("defaultBlock");
 		pack.defaultAttribute = $(this).attr("defaultAttribute");
 		pack.showPlatform = $(this).attr("showPlatform") !== undefined;
 		pack.showEnvironment = $(this).attr("showEnvironment") !== undefined;
+		pack.showBlock = $(this).attr("showBlock") !== undefined;
 
 		//get pack attributes
 		pack.options = {};
@@ -198,7 +201,31 @@ $( document ).ready(function() {
 		environment = environmentName;
 		$("button.environmentButton").removeClass('selected');
 		$(`button.environmentButton[environment="${environmentName}"]`).addClass('selected');
-		
+
+		selectPackBlock('any');
+		$(".blockControls").addClass('hidden');
+		$(".blockControls .blockEnvironment").addClass('hidden');
+		if (pack.showBlock) { 
+			if (environmentName === 'stadium2020') {
+				selectPackBlock('advertisement 2x1');
+				$(".blockControls").removeClass('hidden');
+				$(`.blockControls .blockEnvironment[environment="${environmentName}"]`).removeClass('hidden');
+			} else if (environmentName === 'stadium') {
+				selectPackBlock('advertisement');
+				$(".blockControls").removeClass('hidden');
+				$(`.blockControls .blockEnvironment[environment="${environmentName}"]`).removeClass('hidden');
+			} else if (environmentName === 'valley') {
+				selectPackBlock('advertisement');
+				$(".blockControls").removeClass('hidden');
+				$(`.blockControls .blockEnvironment[environment="${environmentName}"]`).removeClass('hidden');
+			}
+		}
+	}
+
+	selectPackBlock = function(blockName) {
+		block = blockName;
+		$("button.blockButton").removeClass('selected');
+		$(`button.blockButton[block="${blockName}"]`).addClass('selected');	
 	}
 
 	// selectPackVariant = function(variantName,optionName) {
@@ -265,6 +292,7 @@ $( document ).ready(function() {
 		if (platform !== '2020') {
 			skins = skinsEnvironmentFilter(skins);
 		}
+		skins = skinsBlockFilter(skins);
 
 		makeDisplayGroups(skins,groupAttribute);
 
@@ -285,6 +313,16 @@ $( document ).ready(function() {
 		newSkins = [];
 		skins.forEach(skin => {
 			if (skin.environment === environment) {
+				newSkins.push(skin);
+			}
+		});
+		return newSkins;
+	}
+
+	skinsBlockFilter = function(skins) {
+		newSkins = [];
+		skins.forEach(skin => {
+			if (skin.block === block || block === 'any') {
 				newSkins.push(skin);
 			}
 		});
@@ -406,6 +444,11 @@ $( document ).ready(function() {
 
 	$("button.environmentButton").click(function(){
 		selectPackEnvironment($(this).attr("environment"));
+		displaySkins();
+	});
+
+	$("button.blockButton").click(function(){
+		selectPackBlock($(this).attr("block"));
 		displaySkins();
 	});
 

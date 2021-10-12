@@ -429,12 +429,13 @@ a.showcaseBox.green .header::before {background:#00DF70;}
 	text-shadow: 0 0 4px black;
 }
 
-.environmentControls, .platformControls {
+.environmentControls, .platformControls, .blockControls {
 	transition:max-height .5s;
 	max-height:200px;
 	overflow:hidden;
 }
-.environmentControls.hidden, .platformControls.hidden {
+.blockControls { max-height:300px;}
+.environmentControls.hidden, .platformControls.hidden, .blockControls.hidden {
 	display:block;
 	max-height:0;
 }
