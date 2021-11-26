@@ -5,7 +5,6 @@ $( document ).ready(function() {
 	packAttributeButtonOptionElement = $('elements>packAttributeButtonOption>button');
 	skinButtonElement = $('elements>skinButton>div');
 	skinButtonRowElement = $('elements>skinButtonRow>div');
-	console.log(skinButtonRowElement);
 	zoom = '6';
 	zooms = {
 		'2':'col-6',
@@ -39,6 +38,7 @@ $( document ).ready(function() {
 		pack.showPlatform = $(this).attr("showPlatform") !== undefined;
 		pack.showEnvironment = $(this).attr("showEnvironment") !== undefined;
 		pack.showBlock = $(this).attr("showBlock") !== undefined;
+		pack.showVariants = $(this).attr("showVariants") !== undefined;
 
 		//get pack attributes
 		pack.options = {};
@@ -57,18 +57,9 @@ $( document ).ready(function() {
 		});
 
 		//set up pack variants
-		pack.variantNames = [];
-		pack.variants = {};
-
-		$(this).find('variants').children().each(function(){
-			variantName = $(this).prop("tagName").toLowerCase();
-			pack.variantNames.push(variantName);
-			pack.variants[variantName] = {
-				name: variantName,
-				options: [],
-				selected: undefined
-			};
-		});
+		pack.variantClassNames = [];
+		pack.variantClasses = {};
+		pack.selectedVariants = [];
 
 		//get pack skins
 		pack.skins = [];
@@ -90,7 +81,8 @@ $( document ).ready(function() {
 			pathDirection = $(this).attr('direction');
 			pathPlatform = $(this).attr('platform');
 			pathEnvironment = $(this).attr('environment');
-			console.log(pathBlock);
+			pathVariantClass = $(this).attr('variantClass');
+			pathVariant = $(this).attr('variant');
 			$(this).find('skin').each(function(){
 				var skin = {}
 				skin.file = $(this).attr('file');
@@ -111,6 +103,8 @@ $( document ).ready(function() {
 				skin.direction = pathDirection;
 				skin.platform = pathPlatform;
 				skin.environment = pathEnvironment;
+				skin.variantClass = pathVariantClass;
+				skin.variant = pathVariant;
 				
 				if ($(this).attr('category') != undefined) { skin.category = $(this).attr('category'); }
 				if ($(this).attr('block') != undefined) { skin.block = $(this).attr('block'); }
@@ -118,24 +112,25 @@ $( document ).ready(function() {
 				if ($(this).attr('direction') != undefined) { skin.direction = $(this).attr('direction'); }
 				if ($(this).attr('platform') != undefined) { skin.platform = $(this).attr('platform'); }
 				if ($(this).attr('environment') != undefined) { skin.environment = $(this).attr('environment'); }
+
+				if ($(this).attr('variantClass') != undefined) { skin.variantClass = $(this).attr('variantClass'); }
+				if ($(this).attr('variant') != undefined) { skin.variant = $(this).attr('variant'); }
 				//add skin to pack
 				pack.skins.push(skin);
 
-				//update pack variant options
-				pack.variantNames.forEach(variantName => {
-					
-					if (skin[variantName] != undefined) {
-						
-						//the skin contains a variant
-						variantOption = skin[variantName];
-						if (pack.variants[variantName].options.indexOf(variantOption) == -1) {
-							pack.variants[variantName].options.push(variantOption);
-						}
+				//update available pack variants
+				if (skin.variantClass != undefined) {
+					//make a new variant class if necessary
+					if(!(skin.variantClass in pack.variantClasses)) {
+						pack.variantClassNames.push(skin.variantClass);
+						pack.variantClasses[skin.variantClass] = [];
 					}
-				});
-			});
-
-			
+					if (!(pack.variantClasses[skin.variantClass].includes(skin.variant))) {
+						pack.variantClasses[skin.variantClass].push(skin.variant);
+						pack.selectedVariants[skin.variantClass] = skin.variant;
+					}
+				}
+			});			
 		});
 		packs[pack.id] = pack;
 		packIds.push(pack.id);
@@ -153,33 +148,32 @@ $( document ).ready(function() {
 		$('.packButtons .buttonContainer').append(element);
 	});
 
-	makePackControls = function(packId) {
-		return;
+	makeVariantControls = function(packId) {
 		//clear the content area
-		$('.packControls .buttonContainer').html("");
+		$('.variantControls .buttonContainer').html("");
 		pack = packs[packId];
-		attributesNames = pack.attributesNames;
-		attributes = pack.attributes;
-		attributesNames.forEach(attributeName => {
-			attribute = attributes[attributeName];
+		variantClassNames = pack.variantClassNames;
+		variantClasses = pack.variantClasses;
+		variantClassNames.forEach(variantClassName => {
+			variantClass = variantClasses[variantClassName];
 			element = packButtonAttributeElement.clone();
-			element.find("button.packAttributeButton").attr("attribute",attributeName);
-			element.find(".label").html(attributeName);
-			$('.packControls .buttonContainer').append(element);
+			element.find("button.packAttributeButton").attr("attribute",variantClassName);
+			element.find('.packAttributeButtonLabel').html(variantClassName);
+			$('.variantControls .buttonContainer').append(element);
 
 			//add options
-			attribute.options.forEach(option => {
+			variantClass.forEach(option => {
 				element2 = packAttributeButtonOptionElement.clone();
 				element2.html(option);
-				element2.attr('attribute',attributeName);
+				element2.attr('attribute',variantClassName);
 				element2.attr('option',option);
-				$(`.packAttributeButton[attribute="${attributeName}"]`).parent('.dropdown').children('.dropdown-menu').append(element2);
+				$(`.packAttributeButton[attribute="${variantClassName}"]`).siblings('.dropdown-menu').append(element2);
 			});
 		});
 		//hook controls
-		$("button.packAttributeButtonOption").click(function(){
-			console.log($(this).attr('attribute'),$(this).attr('option'));
-			selectPackAttribute($(this).attr('attribute'),$(this).attr('option'));
+		$(".variantControls button.packAttributeButtonOption").click(function(){
+			selectPackVariant($(this).attr('attribute'),$(this).attr('option'));
+			displaySkins();
 		});
 	}
 
@@ -228,31 +222,31 @@ $( document ).ready(function() {
 		$(`button.blockButton[block="${blockName}"]`).addClass('selected');	
 	}
 
-	// selectPackVariant = function(variantName,optionName) {
-	// 	pack = currentPack;
-	// 	//choose option
-	// 	pack.variants[variantName].selected = optionName;
+	selectPackVariant = function(variantName,optionName) {
+		pack = currentPack;
+		//choose option
+		pack.selectedVariants[variantName] = optionName;
 
-	// 	//update button look
-	// 	labelName = variantName.toLowerCase();
-	// 	labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
-	// 	labelOption = optionName.toLowerCase();
-	// 	labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
-	// 	$(`button.packAttributeButton[attribute="${variantName}"] .label`).html(`${labelName}: ${labelOption}`);
-	// }
+		//update button look
+		labelName = variantName.toLowerCase();
+		labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
+		labelOption = optionName.toLowerCase();
+		labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
+		$(`.dropdown-toggle.packAttributeButton[attribute="${variantName}"]`).html(`${labelOption}`);
+	}
 
-	// selectPackAttribute = function(attributeName,optionName) {
-	// 	pack = currentPack;
-	// 	//choose option
-	// 	pack.attributes[attributeName].selected = optionName;
+	selectPackAttribute = function(attributeName,optionName) {
+		pack = currentPack;
+		//choose option
+		pack.attributes[attributeName].selected = optionName;
 
-	// 	//update button look
-	// 	labelName = attributeName.toLowerCase();
-	// 	labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
-	// 	labelOption = optionName.toLowerCase();
-	// 	labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
-	// 	$(`button.packAttributeButton[attribute="${attributeName}"] .label`).html(`${labelName}: ${labelOption}`);
-	// }
+		//update button look
+		labelName = attributeName.toLowerCase();
+		labelName = labelName[0].toUpperCase() + labelName.slice(1).toLowerCase();
+		labelOption = optionName.toLowerCase();
+		labelOption = labelOption[0].toUpperCase() + labelOption.slice(1).toLowerCase();
+		$(`button.packAttributeButton[attribute="${attributeName}"] .label`).html(`${labelName}: ${labelOption}`);
+	}
 
     selectPack = function(packid) {
 		//change button classes
@@ -262,7 +256,6 @@ $( document ).ready(function() {
 		console.log(packid);
 		pack = packs[packid];
 		currentPack = pack;
-
 		groupAttribute = pack.defaultAttribute;
 
 		$(".packTitle").html(pack.name);
@@ -271,28 +264,28 @@ $( document ).ready(function() {
 		$(".environmentControls").addClass('hidden');
 
 		if (pack.showPlatform) { $(".platformControls").removeClass('hidden');}
-
 		
+		if (pack.showVariants) { makeVariantControls(packid); } else { $('.variantControls .buttonContainer').html(""); } //clear the content area 
+
 		selectPackPlatform(pack.defaultPlatform);
-		
 
-		makePackControls(packid);
-
-		pack.variantNames.forEach(variantName => {
-			variant = pack.variants[variantName];
-			selectPackVariant(variantName,variant.options[0]);	
-		});
-
+		if (pack.showVariants) { 
+			pack.variantClassNames.forEach(variantClassName => {
+				selectPackVariant(variantClassName,pack.variantClasses[variantClassName][0])
+			});
+		}
 		displaySkins();
     }
 
 	displaySkins = function() {
-		console.log(currentPack);
 		skins = skinsPlatformFilter(currentPack.skins);
 		if (platform !== '2020') {
 			skins = skinsEnvironmentFilter(skins);
 		}
 		skins = skinsBlockFilter(skins);
+		if (currentPack.showVariants) {
+			skins = skinsVariantFilter(skins);
+		}
 
 		makeDisplayGroups(skins,groupAttribute);
 
@@ -329,9 +322,22 @@ $( document ).ready(function() {
 		return newSkins;
 	}
 
+	skinsVariantFilter = function(skins) {
+		newSkins = [];
+		skins.forEach(skin => {
+			if (skin.variantClass == undefined) {
+				newSkins.push(skin);
+			} else {
+				if (skin.variant == pack.selectedVariants[skin.variantClass]) {
+					newSkins.push(skin);
+				}
+			}
+		});
+		return newSkins;
+	}
+
 	makeDisplayGroups = function(skins,attribute) {
 		currentGroupAttribute = attribute;
-
 		skinDisplayGroups = {}
 		skinDisplayGroupNames = []
 		itemCount = 0;
@@ -343,11 +349,12 @@ $( document ).ready(function() {
 				skinDisplayGroupNames.push(skin[attribute]);
 			}
 			skinDisplayGroups[skin[attribute]].push(skin);
+			
 			itemCount++;
 		});
+		
 		$('.packDetails .itemCount').html(`${itemCount} / ${currentPack.skins.length} items`);
-		console.log(skinDisplayGroups);
-		console.log(skinDisplayGroupNames);
+		
 	}
 
 	makeButtons = function() {
@@ -379,6 +386,9 @@ $( document ).ready(function() {
 				} else {
 					element2.find(".skinButton .image").removeClass('hidden');
 					element2.find(".skinButton img").attr("src",skin.thumbSrc);
+				}
+				if (skin.variantClass != undefined) {
+					element2.find(".skinButtonIcons .icon-colours").removeClass('hidden');
 				}
 
 				element.find('.rowContent').append(element2);
@@ -424,7 +434,6 @@ $( document ).ready(function() {
     }
 
 	setVideoPlaying = function(playing) {
-		console.log("heck");
 		if (playing) {
 			$('.btn.skinButton .video:not(.hidden) video').each(function(){
 				$(this).get(0).play();
