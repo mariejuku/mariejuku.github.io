@@ -479,7 +479,7 @@ $( document ).ready(function() {
 
 	$(".playVideoCheckbox").bootstrapToggle('off');
 
-	selectPack("modern");
+	selectPack("evo");
 	setVideoPlaying(false);
 
 	function copyTextToClipboard(text) {
