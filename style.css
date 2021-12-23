@@ -87,6 +87,7 @@ p a:hover::before {
 	position: absolute;
 	top: 30px;
     right: 100px;
+    z-index: 1;
 }
 
 .twitterLink {
@@ -115,6 +116,26 @@ p a:hover::before {
 .twitterLink:hover::before { top:35%;}
 .twitterLink:hover .suppressed { opacity:1; }
 .twitterLinkRow { height:0px; }
+
+.headerIconLink {
+	position: absolute;
+    right: 100px;
+    top: 70px;
+	z-index: 1;
+}
+.headerIconLink a i {
+	top: 3px;
+	position: relative;
+}
+.headerIconLink a {
+	background-color: #1110;
+    padding: 10px;
+    border-radius: 50%;
+	transition: background-color .1s;
+}
+.headerIconLink a:hover {
+	background-color: #111b;
+}
 @media (max-width: 1200px) { 
 	.twitterLinkRow {
 		position: relative;
