@@ -35,4 +35,22 @@ $( document ).ready(function() {
     $('.row.collapse:not(.show) video').each(function(){
         $(this).get(0).pause(); 
     }); 
+
+    $('.sectionPlayToggle').change(function() {
+        if ($(this).prop('checked')) {
+            $('video.'+$(this).attr('target')).each(function(){
+                $(this).get(0).play();
+            });
+        } else {
+            $('video.'+$(this).attr('target')).each(function(){
+                $(this).get(0).pause();
+            });
+        }
+    });
+    $('.sectionVideoRestart').click(function() {
+        $('video.'+$(this).attr('target')).each(function(){
+            $(this).get(0).currentTime=0;
+            $(this).get(0).play();
+        });
+    });
 });

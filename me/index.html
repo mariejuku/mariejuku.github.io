@@ -16,10 +16,15 @@
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="style.css">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+	
+
 
 </head>
 
@@ -471,9 +476,14 @@
 								<p>A core aspect of the design work was focused on the corporate brands present in the game's internal fiction.</p>
 								<h4 class="display-5 font-italic">Racing Teams</h4>
 								<p>In-game, the player can choose from a variety of vehicles to race with. These vehicles are associated with specific racing teams, and I designed branding and iconography for those teams.</p>
+								<div class="row mb-2">
+									<div class="col text-center">
+										<input type="checkbox" class="sectionPlayToggle" target="bng-team" checked data-width="200" data-height="39" data-toggle="toggle" data-on="<i class='fa fa-pause'></i> Pause Section" data-off="<i class='fa fa-play'></i> Play Section" data-onstyle="default">
+									</div>
+								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamGtek.mp4" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamGtek.mp4" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -499,7 +509,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamOmnicom.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamOmnicom.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -525,7 +535,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamDiavolt.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamDiavolt.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -551,7 +561,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamTenrai.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamTenrai.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -577,7 +587,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamWyvern.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamWyvern.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -587,7 +597,7 @@
 												</a>
 											</div>
 											<div class="col">
-												<video src="bng/teamWyvernOld.webm" class="img-fluid img-thumbnail" muted loop></video>
+												<video src="bng/teamWyvernOld.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 											</div>
 										</div>
 										<div class="row flex-grow-1">
@@ -601,7 +611,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamNexus.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamNexus.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -622,7 +632,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamScorpio.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamScorpio.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -643,7 +653,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamHyperion.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamHyperion.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -669,7 +679,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamCaliburn.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamCaliburn.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -695,7 +705,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<video src="bng/teamBarracuda.webm" class="img-fluid img-thumbnail" muted loop></video>
+										<video src="bng/teamBarracuda.webm" class="img-fluid img-thumbnail bng-team" muted loop></video>
 									</div>
 									<div class="col-6 d-none d-flex flex-column mb-2">
 										<div class="row flex-grow-1">
@@ -712,6 +722,51 @@
 												</a>
 											</div>
 										</div>
+									</div>
+								</div>
+								<h4 class="display-5 font-italic">Campaign Headlines</h4>
+								<p>Gameplay in BallisticNG is seperated into several named campaigns or chapters. I created animated cover art for each of the 11 categories. These used After Effects and 3D animation in Blender.</p>
+								<div class="row mb-2 justify-content-center">
+									<div class="col-auto text-right">
+										<input type="checkbox" class="sectionPlayToggle" target="bng-cover" checked data-width="200" data-height="39" data-toggle="toggle" data-on="<i class='fa fa-pause'></i> Pause Section" data-off="<i class='fa fa-play'></i> Play Section" data-onstyle="default">
+									</div>
+									<div class="col-auto text-left">
+										<button class="btn btn-default sectionVideoRestart" target="bng-cover">Restart</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<video src="bng/tutorial.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/breeze.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/reflex.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/techno.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/ascension.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/urban.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/speedfreak.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/descension.mp4" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/modela.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/modelb.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
+									</div>
+									<div class="col-6">
+										<video src="bng/zenzeus.webm" class="img-fluid img-thumbnail bng-cover" muted loop></video>
 									</div>
 								</div>
 								<!--
@@ -759,6 +814,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
 			crossorigin="anonymous"></script>
+		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha512-YibiFIKqwi6sZFfPm5HNHQYemJwFbyyYHjrr3UT+VobMt/YBo1kBxgui5RWc4C3B4RJMYCdCAJkbXHt+irKfSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script src="script.js"></script>
 	</footer>
