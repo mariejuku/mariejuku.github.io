@@ -39,6 +39,8 @@ $( document ).ready(function() {
 		pack.showEnvironment = $(this).attr("showEnvironment") !== undefined;
 		pack.showBlock = $(this).attr("showBlock") !== undefined;
 		pack.showVariants = $(this).attr("showVariants") !== undefined;
+		pack.description = $(this).find('description').html();
+		if(pack.description == undefined) { pack.description = ""; }
 
 		//get pack attributes
 		pack.options = {};
@@ -88,6 +90,7 @@ $( document ).ready(function() {
 				skin.file = $(this).attr('file');
 				skin.name = skin.file;
 				skin.type = $(this).attr('type');
+				skin.parallax  = $(this).attr('parallax');
 				if (skin.type === 'video') {
 					skin.src = fileSrc + skin.file + fileExtVideo;
 					skin.thumbSrc = thumbSrc + skin.file + thumbExtVideo;
@@ -354,6 +357,7 @@ $( document ).ready(function() {
 		});
 		
 		$('.packDetails .itemCount').html(`${itemCount} / ${currentPack.skins.length} items`);
+		$('.packDetails .description').html(`${currentPack.description}`);
 		
 	}
 
@@ -389,6 +393,9 @@ $( document ).ready(function() {
 				}
 				if (skin.variantClass != undefined) {
 					element2.find(".skinButtonIcons .icon-colours").removeClass('hidden');
+				}
+				if (skin.parallax != undefined) {
+					element2.find(".skinButtonIcons .icon-parallax").removeClass('hidden');
 				}
 
 				element.find('.rowContent').append(element2);
