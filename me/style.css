@@ -22,6 +22,7 @@ body {
 	background-size: cover;
 }
 
+a:not(:hover).silent { color:#111b; }
 
 h1.title { color:#fff; text-shadow: 0px 2px 4px #000; display:inline-block; position:relative; }
 h1 .bg { background-color: #333b; position: absolute; left:0; right:0; top:26px; bottom:17px; z-index:-1; border-radius:4px;}
