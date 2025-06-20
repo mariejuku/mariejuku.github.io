@@ -118,6 +118,10 @@ body.scrapbook {
 	background:url('./page3.jpg');
 	background-size: contain;
 }
+#flipbook3 .page {
+	background:url('./page2.png');
+	background-size: cover;
+}
 #flipbook2 .page.p1 {
 	background-image:url('./page3b.jpg');
 }

@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-	<title>me when i</title>
+	<title>Scrapbook</title>
 
 	<link href="fontawesome5/css/all.css" rel="stylesheet">
 
@@ -438,7 +438,24 @@
 						<img src="./scrapbookphoto/s1/photo (13).png"/>
 						<div class="tape right"></div>
 					</div>
-					
+				</div>
+				<div class="div">
+					<div class="photo" top=1 left=4 angle=.3 size=1400>
+						<img src="./scrapbookphoto/s2/photo (29).png"/>
+						<div class="tape left"></div>
+						<div class="tape left"></div>
+					</div>
+				</div>
+				<div class="div">
+					<div class="photo" top=1 left=-49 angle=.3 size=1400>
+						<img src="./scrapbookphoto/s2/photo (29).png"/>
+					</div>
+					<div class="photo" top=4 left=23 angle=1 size=400>
+						<img src="./scrapbookphoto/s2/photo (7).png"/>
+						<div class="tape bottom"></div>
+						<div class="tape right"></div>
+						<div class="tape top"></div>
+					</div>
 				</div>
 				<div> 
 					<div class="photo" top=3 left=4 angle=-.2 size=1300>
@@ -777,6 +794,18 @@
 					</div>
 				</div>
 				<div class="div">
+					<div class="photo" top=1 left=8 angle=.3 size=1400>
+						<img src="./scrapbookphoto/s2/photo (2).png"/>
+						<div class="tape left"></div>
+					</div>
+				</div>
+				<div class="div">
+					<div class="photo" top=1 left=-45 angle=.3 size=1400>
+						<img src="./scrapbookphoto/s2/photo (2).png"/>
+						<div class="tape left"></div>
+					</div>
+				</div>
+				<div class="div">
 					<div class="photo clean" top=1 left=39 angle=.3 size=1000>
 						<img src="./scrapbookphoto/s2/photo (21).png"/>
 						<div class="tape left"></div>
@@ -794,11 +823,72 @@
 						<div class="tape right"></div>
 						<div class="tape right"></div>
 					</div>
+					<div class="note" top=43 left=4 angle=-9 size=6>
+						<span class="translate">Looking forward</span>
+					</div>
 				</div>
-				<!--Season 3-->
 				<div class="div">
 					<div class="note" top=24 left=9 angle=-2 size=5>
 						<span class="translate">To health,<br>and to the future</span>
+					</div>
+				</div>
+			</div>
+			<div id="flipbook3" class="flipbook inactive hidden">
+				<div> 
+					<div class="photo clean noshadow" top=20 left=8 angle=-7 size=600>
+						<img src="./scrapbookphoto/season3bw.png"/>
+					</div>
+					<div class="note" top=30 left=26 angle=-8 size=3>
+						<span class="translate">Property of<br/>M'moke Senyu</span>
+					</div>
+				</div>
+				<div> 
+					
+					<div class="photo" top=6 left=23.1 angle=-2 size=1200>
+						<img src="./scrapbookphoto/s3/photo.png"/>
+						<div class="tape left"></div>
+					</div>
+					<div class="photo clean noshadow" top=4 left=0 angle=-2 size=800>
+						<img src="./season3_large.png"/>
+					</div>
+				</div>
+				<div> 
+					<div class="photo" top=6 left=-30 angle=-2 size=1200>
+						<img src="./scrapbookphoto/s3/photo.png"/>
+						<div class="tape right"></div>
+					</div>
+				</div>
+				<div> 
+					<div class="photo" top=4 left=6 angle=-2 size=400>
+						<img src="./scrapbookphoto/s3/photo (3).png"/>
+						<div class="tape top"></div>
+						<div class="tape bottom"></div>
+					</div>
+					<div class="photo" top=3 left=40 angle=3 size=400>
+						<img src="./scrapbookphoto/s3/photo (2).png"/>
+						<div class="tape left"></div>
+					</div>
+				</div>
+				<div> 
+					<div class="photo" top=3 left=-13.1 angle=3 size=400>
+						<img src="./scrapbookphoto/s3/photo (2).png"/>
+						<div class="tape right"></div>
+					</div>
+					<div class="photo" top=4 left=20 angle=-.5 size=400>
+						<img src="./scrapbookphoto/s3/photo (1).png"/>
+						<div class="tape top"></div>
+						<div class="tape bottom"></div>
+					</div>
+				</div>
+				<div> 
+					<div class="photo" top=3 left=-13.1 angle=3 size=400>
+						<img src="./scrapbookphoto/s3/photo (2).png"/>
+						<div class="tape right"></div>
+					</div>
+					<div class="photo" top=4 left=20 angle=-.5 size=400>
+						<img src="./scrapbookphoto/s3/photo (1).png"/>
+						<div class="tape top"></div>
+						<div class="tape bottom"></div>
 					</div>
 				</div>
 			</div>
@@ -820,7 +910,7 @@
 		<script>
 			var book = -1;
 			var turning = 0;
-			var startpagetest = 1;
+			var startpagetest = 6;
 			$( document ).ready(function() {
 				$('.translate').each(function(){
 					let html = $(this).html();
@@ -846,12 +936,15 @@
 				$("#book2button").click(function(){
 					startbook(2);
 				});
+				$("#book3button").click(function(){
+					startbook(3);
+				});
 
 				$("#flipbook1").turn({
 					width: 1700,
 					height: 860,
 					autoCenter: true,
-					page:startpagetest
+					page:1
 				});
 
 				$("#flipbook2").turn({
@@ -859,6 +952,13 @@
 					height: 700,
 					autoCenter: true,
 					page:1
+				});
+
+				$("#flipbook3").turn({
+					width: 1700,
+					height: 860,
+					autoCenter: true,
+					page:startpagetest
 				});
 
 				let generate = function(booknum, pageNumber) {
@@ -958,7 +1058,13 @@
 					}
 				}
 
-				//startbook(1);
+				setTimeout(function(){
+					startbook(3);
+					generate(book,startpagetest);
+					generate(book,startpagetest-1);
+					generate(book,startpagetest+1);
+				},0);
+				
 
 				let endbooks = function(){
 					if (book !== -1) {
