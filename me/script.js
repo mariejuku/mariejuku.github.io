@@ -12,7 +12,7 @@ $( document ).ready(function() {
 
     $('.row.collapse').on('show.bs.collapse', function () {
         $(this).find("video").each(function(){
-            $(this).get(0).play(); 
+            //$(this).get(0).play(); 
         });
     });
     $('.row.collapse').on('shown.bs.collapse', function () {

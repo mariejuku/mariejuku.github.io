@@ -120,6 +120,9 @@ img.img-round {
 .color-main {
 	color:rgb(255, 110, 134);
 }
+.color-grey {
+	color:rgb(128, 128, 128);
+}
 .icon-shadow {
 	text-shadow: 0px 2px 1px #0006;
 }
